@@ -15,6 +15,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.orangejewce.ojs_rpg_origins.item.ModCreativeModTabs;
 import net.orangejewce.ojs_rpg_origins.item.ModItems;
+import net.orangejewce.ojs_rpg_origins.item.util.ModItemProperties;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -73,7 +74,7 @@ public class OJs_OriginMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }

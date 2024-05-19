@@ -3,5 +3,9 @@
   "item.ojs_rpg_origins.raw_sapphire": "Raw Sapphire",
   "item.ojs_rpg_origins.whelm": "Whelm Bow",
 
-  "creativetab.rpg_tab": "Oj's RPG Origins"
+  "creativetab.rpg_tab": "Oj's RPG Origins",
+  "tooltip.whelm": "Whelm bow for the Archer Origin",
+  "tooltip.multishot": "✦ Special Ability: Multishot",
+  "tooltip.info":"Shoots three arrows at once"
+
 }

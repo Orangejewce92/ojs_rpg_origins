@@ -1,0 +1,6 @@
+{
+  "parent": "ojs_rpg_origins:item/whelm",
+  "textures": {
+    "layer0": "ojs_rpg_origins:item/whelm_pulling_0"
+  }
+}
