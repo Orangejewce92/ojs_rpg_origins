@@ -2,10 +2,14 @@
   "item.ojs_rpg_origins.sapphire": "Sapphire",
   "item.ojs_rpg_origins.raw_sapphire": "Raw Sapphire",
   "item.ojs_rpg_origins.whelm": "Whelm Bow",
+  "item.ojs_rpg_origins.sapphire_staff": "Sapphire Staff",
 
   "creativetab.rpg_tab": "Oj's RPG Origins",
   "tooltip.whelm": "Whelm bow for the Archer Origin",
   "tooltip.multishot": "✦ Special Ability: Multishot",
-  "tooltip.info":"Shoots three arrows at once"
+  "tooltip.info":"Shoots three arrows at once",
+  "tooltip.infostaff": "Sapphire Staff of Fire",
+  "tooltip.staff": "Hold for Stronger Attack",
+  "tooltip.ability": "✦ Special Ability: Fireball"
 
 }

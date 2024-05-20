@@ -1,6 +1,5 @@
 package net.orangejewce.ojs_rpg_origins.item;
 
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
@@ -10,37 +9,52 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.text.JTextComponent;
-import java.awt.*;
 import java.util.List;
 
+/**
+ * Custom bow item that shoots three arrows simultaneously.
+ */
 public class WhelmBow extends BowItem {
 
-    public WhelmBow(Properties pProperties) {
-        super(pProperties);
+    public WhelmBow(Properties properties) {
+        super(properties);
     }
 
-
+    /**
+     * Adds custom hover text to the bow item.
+     *
+     * @param stack the item stack
+     * @param level the level
+     * @param tooltipComponents the list of tooltip components
+     * @param isAdvanced whether advanced tooltips are enabled
+     */
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("tooltip.whelm").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+        tooltipComponents.add(Component.translatable("tooltip.whelm")
+                .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
         // Additional information
-        pTooltipComponents.add(Component.translatable("tooltip.info")
+        tooltipComponents.add(Component.translatable("tooltip.info")
                 .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
-
         // Unicode icon example
-        pTooltipComponents.add(Component.translatable("tooltip.multishot")
+        tooltipComponents.add(Component.translatable("tooltip.multishot")
                 .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
 
-        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+        super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
     }
 
+    /**
+     * Releases the bow, shooting three arrows simultaneously.
+     *
+     * @param stack the item stack
+     * @param world the world
+     * @param shooter the entity shooting the bow
+     * @param timeLeft the time left before fully charged
+     */
     @Override
     public void releaseUsing(ItemStack stack, Level world, net.minecraft.world.entity.LivingEntity shooter, int timeLeft) {
         if (shooter instanceof ServerPlayer player) {
@@ -57,10 +71,10 @@ public class WhelmBow extends BowItem {
                 if (charge < 0) return;
 
                 float velocity = getPowerForTime(charge);
-                if ((double)velocity >= 0.1D) {
-                    boolean infiniteAmmo = player.getAbilities().instabuild || (ammo.getItem() instanceof ArrowItem && ((ArrowItem)ammo.getItem()).isInfinite(ammo, stack, player));
+                if ((double) velocity >= 0.1D) {
+                    boolean infiniteAmmo = player.getAbilities().instabuild || (ammo.getItem() instanceof ArrowItem && ((ArrowItem) ammo.getItem()).isInfinite(ammo, stack, player));
                     if (!world.isClientSide) {
-                        ArrowItem arrowItem = (ArrowItem)(ammo.getItem() instanceof ArrowItem ? ammo.getItem() : Items.ARROW);
+                        ArrowItem arrowItem = (ArrowItem) (ammo.getItem() instanceof ArrowItem ? ammo.getItem() : Items.ARROW);
                         AbstractArrow arrow1 = arrowItem.createArrow(world, ammo, player);
                         AbstractArrow arrow2 = arrowItem.createArrow(world, ammo, player);
                         AbstractArrow arrow3 = arrowItem.createArrow(world, ammo, player);
@@ -73,6 +87,7 @@ public class WhelmBow extends BowItem {
                         arrow2.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity * 3.0F, 1.0F);
                         arrow3.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity * 3.0F, 1.0F);
 
+                        // Adjust the direction of the second and third arrows
                         arrow2.setDeltaMovement(arrow2.getDeltaMovement().add(0.1D, 0.0D, 0.1D));
                         arrow3.setDeltaMovement(arrow3.getDeltaMovement().add(-0.1D, 0.0D, -0.1D));
 
@@ -83,7 +98,7 @@ public class WhelmBow extends BowItem {
                         world.addFreshEntity(arrow3);
                     }
 
-                    world.playSound((ServerPlayer)null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (world.getRandom().nextFloat() * 0.4F + 1.2F) + velocity * 0.5F);
+                    world.playSound((ServerPlayer) null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (world.getRandom().nextFloat() * 0.4F + 1.2F) + velocity * 0.5F);
                     if (!infiniteAmmo && !player.getAbilities().instabuild) {
                         ammo.shrink(3);
                         if (ammo.isEmpty()) {

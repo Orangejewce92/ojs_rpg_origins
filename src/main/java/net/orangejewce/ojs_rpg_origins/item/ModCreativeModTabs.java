@@ -21,6 +21,7 @@ public class ModCreativeModTabs {
                       pOutput.accept(ModItems.WHELM.get());
                       pOutput.accept(ModItems.RAW_SAPPHIRE.get());
                       pOutput.accept(ModItems.SAPPHIRE.get());
+                      pOutput.accept(ModItems.SAPPHIRE_STAFF.get());
                     })
                     .build());
     public static void register(IEventBus eventBus) {
