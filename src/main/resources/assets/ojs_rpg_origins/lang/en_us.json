@@ -3,8 +3,13 @@
   "item.ojs_rpg_origins.raw_sapphire": "Raw Sapphire",
   "item.ojs_rpg_origins.whelm": "Whelm Bow",
   "item.ojs_rpg_origins.sapphire_staff": "Sapphire Staff",
+  "item.ojs_rpg_origins.scythe": "Steel Scythe",
+
+  "block.ojs_rpg_origins.sapphire_block": "Block of Sapphire",
+  "block.ojs_rpg_origins.raw_sapphire_block": "Block of Raw Sapphire",
 
   "creativetab.rpg_tab": "Oj's RPG Origins",
+
   "tooltip.whelm": "Whelm bow for the Archer Origin",
   "tooltip.multishot": "✦ Special Ability: Multishot",
   "tooltip.info":"Shoots three arrows at once",

@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.orangejewce.ojs_rpg_origins.block.ModBlocks;
 import net.orangejewce.ojs_rpg_origins.item.ModCreativeModTabs;
 import net.orangejewce.ojs_rpg_origins.item.ModItems;
 import net.orangejewce.ojs_rpg_origins.item.util.ModItemProperties;
@@ -33,7 +34,7 @@ public class OJs_OriginMod
 
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
-
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

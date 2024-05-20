@@ -25,8 +25,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class SapphireStaff extends Item {
-    private static final int COOLDOWN_TICKS = 20 * 2; // 2 seconds cooldown
+    private static final int COOLDOWN_TICKS = 20 * 1; // 1 second cooldown
     private static final int MAX_CHARGE_TIME = 40; // 2 seconds for max charge
+    private static final int USE_DURATION = 72000; // Max use duration (same as bows)
+    private static final int PARTICLE_COUNT = 10; // Number of particles to spawn
 
     public SapphireStaff(Properties properties) {
         super(properties);
@@ -54,7 +56,7 @@ public class SapphireStaff extends Item {
             double accelY = player.getLookAngle().y * accelMultiplier;
             double accelZ = player.getLookAngle().z * accelMultiplier;
 
-            int explosionPower = Math.round(1 * chargeRatio); // Scales with charge time
+            int explosionPower = Math.round(1 * chargeRatio);
 
             LargeFireball fireball = new LargeFireball(world, player, accelX, accelY, accelZ, explosionPower);
             fireball.setPos(player.getX() + player.getLookAngle().x * 1.5, player.getY(0.5D) + 0.5D, player.getZ() + player.getLookAngle().z * 1.5);
@@ -62,7 +64,7 @@ public class SapphireStaff extends Item {
             world.addFreshEntity(fireball);
 
             if (!world.isClientSide) {
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < PARTICLE_COUNT; i++) {
                     double offsetX = (world.random.nextDouble() - 0.5) * 2.0;
                     double offsetY = (world.random.nextDouble() - 0.5) * 2.0;
                     double offsetZ = (world.random.nextDouble() - 0.5) * 2.0;
@@ -72,7 +74,7 @@ public class SapphireStaff extends Item {
 
             world.playSound(null, player.blockPosition(), SoundEvents.BLAZE_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F);
             player.awardStat(Stats.ITEM_USED.get(this));
-            stack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));
+            stack.hurtAndBreak(2, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand())); // Increased durability loss on right click
 
             player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
         }
@@ -80,24 +82,36 @@ public class SapphireStaff extends Item {
 
     @Override
     public int getUseDuration(ItemStack stack) {
-        return 72000; // Allows charging for up to 72000 ticks (same as bows)
+        return USE_DURATION; // Allows charging for up to 72000 ticks (same as bows)
     }
 
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
         return UseAnim.BOW; // Display bow animation while charging
     }
+
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("tooltip.staff").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
-        // Additional information
         pTooltipComponents.add(Component.translatable("tooltip.infostaff")
                 .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
-
-        // Unicode icon example
         pTooltipComponents.add(Component.translatable("tooltip.ability")
                 .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
-
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+    }
+
+    @Override
+    public void onUseTick(Level world, LivingEntity user, ItemStack stack, int count) {
+        if (user instanceof Player player && world.isClientSide) {
+            double d0 = player.getX() + player.getLookAngle().x * 1.2;
+            double d1 = player.getY() + player.getEyeHeight() - 0.2;
+            double d2 = player.getZ() + player.getLookAngle().z * 1.2;
+            Vec3 motion = new Vec3(player.getRandom().nextDouble() - 0.5, player.getRandom().nextDouble() - 0.5, player.getRandom().nextDouble() - 0.5);
+            world.addParticle(ParticleTypes.ENCHANT, d0, d1, d2, motion.x, motion.y, motion.z);
+            if (count % 10 == 0) {
+                world.playLocalSound(player.getX(), player.getY(), player.getZ(), SoundEvents.BEACON_POWER_SELECT, SoundSource.PLAYERS, 0.5F, 1.0F + (count / 100.0F), false);
+                stack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand())); // Additional durability loss on hold
+            }
+        }
     }
 }

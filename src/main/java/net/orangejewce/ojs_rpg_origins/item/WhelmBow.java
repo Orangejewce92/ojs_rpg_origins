@@ -1,5 +1,6 @@
 package net.orangejewce.ojs_rpg_origins.item;
 
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
@@ -7,14 +8,19 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Custom bow item that shoots three arrows simultaneously.
@@ -28,10 +34,10 @@ public class WhelmBow extends BowItem {
     /**
      * Adds custom hover text to the bow item.
      *
-     * @param stack the item stack
-     * @param level the level
+     * @param stack             the item stack
+     * @param level             the level
      * @param tooltipComponents the list of tooltip components
-     * @param isAdvanced whether advanced tooltips are enabled
+     * @param isAdvanced        whether advanced tooltips are enabled
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
@@ -50,9 +56,9 @@ public class WhelmBow extends BowItem {
     /**
      * Releases the bow, shooting three arrows simultaneously.
      *
-     * @param stack the item stack
-     * @param world the world
-     * @param shooter the entity shooting the bow
+     * @param stack    the item stack
+     * @param world    the world
+     * @param shooter  the entity shooting the bow
      * @param timeLeft the time left before fully charged
      */
     @Override
@@ -112,3 +118,4 @@ public class WhelmBow extends BowItem {
         }
     }
 }
+

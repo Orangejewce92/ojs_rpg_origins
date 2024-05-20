@@ -3,6 +3,7 @@ package net.orangejewce.ojs_rpg_origins.item;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -18,6 +19,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> SAPPHIRE_STAFF = ITEMS.register("sapphire_staff",
             () -> new SapphireStaff(new Item.Properties().stacksTo(1).durability(600).rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> SCYTHE = ITEMS.register("scythe",
+            () -> new Item(new Item.Properties().stacksTo(1).durability(600).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> RAW_SAPPHIRE = ITEMS.register("raw_sapphire",
             () -> new Item(new Item.Properties()));
      public static final RegistryObject<Item> WHELM = ITEMS.register("whelm",

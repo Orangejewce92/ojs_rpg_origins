@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ojs_rpg_origins:block/raw_sapphire_block"
+  }
+}

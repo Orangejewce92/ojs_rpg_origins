@@ -2,6 +2,7 @@ package net.orangejewce.ojs_rpg_origins.item;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
@@ -9,6 +10,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.orangejewce.ojs_rpg_origins.OJs_OriginMod;
+import net.orangejewce.ojs_rpg_origins.block.ModBlocks;
 
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
@@ -18,10 +20,16 @@ public class ModCreativeModTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.WHELM.get()))
                     .title(Component.translatable("creativetab.rpg_tab"))
                     .displayItems((pParameters, pOutput) -> {
-                      pOutput.accept(ModItems.WHELM.get());
                       pOutput.accept(ModItems.RAW_SAPPHIRE.get());
                       pOutput.accept(ModItems.SAPPHIRE.get());
+                      pOutput.accept(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
+                      pOutput.accept(ModBlocks.SAPPHIRE_BLOCK.get());
+                      pOutput.accept(ModItems.WHELM.get());
                       pOutput.accept(ModItems.SAPPHIRE_STAFF.get());
+                      pOutput.accept(ModItems.SCYTHE.get());
+
+
+
                     })
                     .build());
     public static void register(IEventBus eventBus) {
