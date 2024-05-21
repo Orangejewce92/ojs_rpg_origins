@@ -20,7 +20,7 @@ public class ModItems {
     public static final RegistryObject<Item> SAPPHIRE_STAFF = ITEMS.register("sapphire_staff",
             () -> new SapphireStaff(new Item.Properties().stacksTo(1).durability(600).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> SCYTHE = ITEMS.register("scythe",
-            () -> new Item(new Item.Properties().stacksTo(1).durability(600).rarity(Rarity.RARE)));
+            () -> new Scythe(new Item.Properties().stacksTo(1).durability(600).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> RAW_SAPPHIRE = ITEMS.register("raw_sapphire",
             () -> new Item(new Item.Properties()));
      public static final RegistryObject<Item> WHELM = ITEMS.register("whelm",

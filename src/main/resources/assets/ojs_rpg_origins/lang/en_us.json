@@ -3,7 +3,7 @@
   "item.ojs_rpg_origins.raw_sapphire": "Raw Sapphire",
   "item.ojs_rpg_origins.whelm": "Whelm Bow",
   "item.ojs_rpg_origins.sapphire_staff": "Sapphire Staff",
-  "item.ojs_rpg_origins.scythe": "Steel Scythe",
+  "item.ojs_rpg_origins.scythe": "LifeHunt",
 
   "block.ojs_rpg_origins.sapphire_block": "Block of Sapphire",
   "block.ojs_rpg_origins.raw_sapphire_block": "Block of Raw Sapphire",
@@ -15,6 +15,12 @@
   "tooltip.info":"Shoots three arrows at once",
   "tooltip.infostaff": "Sapphire Staff of Fire",
   "tooltip.staff": "Hold for Stronger Attack",
-  "tooltip.ability": "✦ Special Ability: Fireball"
+  "tooltip.ability": "✦ Special Ability: Fireball",
+  "tooltip.scythe": "Scythe",
+  "tooltip.infoscythe": "A mystical scythe with sweeping power.",
+  "tooltip.sweep_ability": "✦ Special Ability: sweeping attack.",
+  "tooltip.lifesteal_ability": "Absorbs health from damaged enemies."
+
+
 
 }
