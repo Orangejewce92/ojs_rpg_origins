@@ -6,6 +6,10 @@
   "item.ojs_rpg_origins.scythe": "LifeHunt",
 
   "block.ojs_rpg_origins.sapphire_block": "Block of Sapphire",
+  "block.ojs_rpg_origins.sapphire_ore": "Sapphire Ore",
+  "block.ojs_rpg_origins.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+  "block.ojs_rpg_origins.nether_sapphire_ore": "Nether Sapphire Ore",
+  "block.ojs_rpg_origins.end_stone_sapphire_ore": "Endstone Sapphire Ore",
   "block.ojs_rpg_origins.raw_sapphire_block": "Block of Raw Sapphire",
 
   "creativetab.rpg_tab": "Oj's RPG Origins",
