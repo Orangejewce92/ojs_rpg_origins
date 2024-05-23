@@ -40,14 +40,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
     this.tag(BlockTags.NEEDS_IRON_TOOL)
             .add(ModBlocks.SAPPHIRE_ORE.get(),
-                 ModBlocks.NETHER_SAPPHIRE_ORE.get(),
-                 ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get()
-        );
-
-    this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
-            .add(ModBlocks.END_STONE_SAPPHIRE_ORE.get());
+                 ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
 
 
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(ModBlocks.NETHER_SAPPHIRE_ORE.get());
+
+        this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
+                .add(ModBlocks.END_STONE_SAPPHIRE_ORE.get());
     }
 }
 

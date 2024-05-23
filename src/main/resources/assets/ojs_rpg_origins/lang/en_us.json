@@ -4,6 +4,7 @@
   "item.ojs_rpg_origins.whelm": "Whelm Bow",
   "item.ojs_rpg_origins.sapphire_staff": "Sapphire Staff",
   "item.ojs_rpg_origins.scythe": "LifeHunt",
+  "item.ojs_rpg_origins.lute": "Bard's Lute",
 
   "block.ojs_rpg_origins.sapphire_block": "Block of Sapphire",
   "block.ojs_rpg_origins.sapphire_ore": "Sapphire Ore",
@@ -12,18 +13,35 @@
   "block.ojs_rpg_origins.end_stone_sapphire_ore": "Endstone Sapphire Ore",
   "block.ojs_rpg_origins.raw_sapphire_block": "Block of Raw Sapphire",
 
+  "item.ojs_rpg_origins.sapphire_sword": "Sapphire Sword",
+  "item.ojs_rpg_origins.sapphire_pickaxe": "Sapphire Pickaxe",
+  "item.ojs_rpg_origins.sapphire_shovel": "Sapphire Shovel",
+  "item.ojs_rpg_origins.sapphire_axe": "Sapphire Axe",
+  "item.ojs_rpg_origins.sapphire_hoe": "Sapphire Hoe",
+
+  "item.ojs_rpg_origins.sapphire_helmet": "Sapphire Helmet",
+  "item.ojs_rpg_origins.sapphire_chestplate": "Sapphire Chestplate",
+  "item.ojs_rpg_origins.sapphire_leggings": "Sapphire Leggings",
+  "item.ojs_rpg_origins.sapphire_boots": "Sapphire Boots",
+
+  "tooltip.harmonic_lute": "§6Harmonic Lute",
+  "tooltip.info_harmonic_lute": "§7Plays music that grants passive and defensive powers.",
+  "tooltip.passive_harmonic_lute": "§7- §aPassive:§7 Regeneration and resistance",
+  "tooltip.active_harmonic_lute": "§7- §bActive:§7 Shielding Song and Song of Invulnerability",
+
+
   "creativetab.rpg_tab": "Oj's RPG Origins",
 
-  "tooltip.whelm": "Whelm bow for the Archer Origin",
-  "tooltip.multishot": "✦ Special Ability: Multishot",
-  "tooltip.info":"Shoots three arrows at once",
-  "tooltip.infostaff": "Sapphire Staff of Fire",
-  "tooltip.staff": "Hold for Stronger Attack",
-  "tooltip.ability": "✦ Special Ability: Fireball",
-  "tooltip.scythe": "Scythe",
-  "tooltip.infoscythe": "A mystical scythe with sweeping power.",
-  "tooltip.sweep_ability": "✦ Special Ability: sweeping attack.",
-  "tooltip.lifesteal_ability": "Absorbs health from damaged enemies."
+  "tooltip.whelm": "§6Whelm Bow",
+  "tooltip.info_whelm": "§7A bow with powerful abilities.",
+  "tooltip.multishot": "§7- §aMultishot:§7 Fires multiple arrows.",
+  "tooltip.staff": "§6Staff",
+  "tooltip.info_staff": "§7A magical staff with powerful abilities.",
+  "tooltip.ability": "§7- §aAbility:§7 Unleashes magical power.",
+  "tooltip.scythe": "§6Scythe",
+  "tooltip.info_scythe": "§7A powerful weapon with sweeping and lifesteal abilities.",
+  "tooltip.sweep_ability": "§7- §aSweep:§7 Deals damage in a radius and applies slowness.",
+  "tooltip.lifesteal_ability": "§7- §bLifesteal:§7 Converts a portion of damage dealt to health."
 
 
 

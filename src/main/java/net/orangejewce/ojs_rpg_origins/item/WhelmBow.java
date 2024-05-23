@@ -43,15 +43,13 @@ public class WhelmBow extends BowItem {
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         tooltipComponents.add(Component.translatable("tooltip.whelm")
                 .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
-        // Additional information
-        tooltipComponents.add(Component.translatable("tooltip.info")
+        tooltipComponents.add(Component.translatable("tooltip.info_whelm")
                 .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
-        // Unicode icon example
         tooltipComponents.add(Component.translatable("tooltip.multishot")
                 .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
-
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
     }
+
 
     /**
      * Releases the bow, shooting three arrows simultaneously.

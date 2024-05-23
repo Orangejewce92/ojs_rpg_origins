@@ -91,13 +91,11 @@ public class SapphireStaff extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("tooltip.staff").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
-        pTooltipComponents.add(Component.translatable("tooltip.infostaff")
-                .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
-        pTooltipComponents.add(Component.translatable("tooltip.ability")
-                .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
-        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+        tooltip.add(Component.translatable("tooltip.staff").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
+        tooltip.add(Component.translatable("tooltip.info_staff").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+        tooltip.add(Component.translatable("tooltip.ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
+        super.appendHoverText(stack, level, tooltip, flag);
     }
 
     @Override

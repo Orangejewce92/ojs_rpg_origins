@@ -10,7 +10,8 @@ import net.orangejewce.ojs_rpg_origins.OJs_OriginMod;
 
 public class ModTags {
     public static class Blocks {
-        public static final TagKey<Block> VALUABLES = tag("Valuables");
+        public static final TagKey<Block> VALUABLES = tag("valuables");
+        public static final TagKey<Block> NEEDS_SAPPHIRE_TOOL = tag("needs_sapphire_tool");
 
 
         private static TagKey<Block> tag(String name) {
