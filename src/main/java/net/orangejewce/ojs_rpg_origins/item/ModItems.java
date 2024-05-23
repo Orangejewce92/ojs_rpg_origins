@@ -18,6 +18,8 @@ public class ModItems {
             () -> new SapphireStaff(new Item.Properties().stacksTo(1).durability(600).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> SCYTHE = ITEMS.register("scythe",
             () -> new Scythe(new Item.Properties().stacksTo(1).durability(600).rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> THIEF_GLOVE = ITEMS.register("thief_glove",
+            () -> new ThiefGloveItem(new Item.Properties()));
 
     public static final RegistryObject<Item> LUTE = ITEMS.register("lute",
             () -> new HarmonicLuteItem(new Item.Properties().durability(300).rarity(Rarity.EPIC)));
