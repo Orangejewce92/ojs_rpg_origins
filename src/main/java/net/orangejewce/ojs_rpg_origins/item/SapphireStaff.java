@@ -10,6 +10,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.LargeFireball;
@@ -29,6 +30,7 @@ public class SapphireStaff extends Item {
     private static final int MAX_CHARGE_TIME = 40; // 2 seconds for max charge
     private static final int USE_DURATION = 72000; // Max use duration (same as bows)
     private static final int PARTICLE_COUNT = 10; // Number of particles to spawn
+    private static final float LIGHT_ATTACK_DAMAGE = 3.0f; // Light attack damage
 
     public SapphireStaff(Properties properties) {
         super(properties);
@@ -95,6 +97,7 @@ public class SapphireStaff extends Item {
         tooltip.add(Component.translatable("tooltip.staff").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
         tooltip.add(Component.translatable("tooltip.info_staff").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
         tooltip.add(Component.translatable("tooltip.ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
+        tooltip.add(Component.translatable("tooltip.special_ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
         super.appendHoverText(stack, level, tooltip, flag);
     }
 
@@ -111,5 +114,15 @@ public class SapphireStaff extends Item {
                 stack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand())); // Additional durability loss on hold
             }
         }
+    }
+
+    @Override
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if (attacker instanceof Player player) {
+            target.hurt(player.damageSources().playerAttack(player), LIGHT_ATTACK_DAMAGE);
+            stack.hurtAndBreak(1, attacker, (entity) -> entity.broadcastBreakEvent(attacker.getUsedItemHand()));
+            return super.hurtEnemy(stack, target, attacker);
+        }
+        return false;
     }
 }

@@ -39,6 +39,7 @@
   "tooltip.staff": "§6Staff",
   "tooltip.info_staff": "§7A magical staff with powerful abilities.",
   "tooltip.ability": "§7- §aAbility:§7 Unleashes magical power.",
+  "tooltip.special_ability": "§7- §bHold:§7 More powerful magical power.",
   "tooltip.scythe": "§6Scythe",
   "tooltip.info_scythe": "§7A powerful weapon with sweeping and lifesteal abilities.",
   "tooltip.sweep_ability": "§7- §aSweep:§7 Deals damage in a radius and applies slowness.",

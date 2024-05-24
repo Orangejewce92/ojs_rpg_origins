@@ -9,15 +9,12 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -26,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class Scythe extends Item {
+public class ScytheItem extends SwordItem {
     private static final int COOLDOWN_TICKS = 20 * 5; // 5 second cooldown
     private static final double SWEEP_RADIUS = 3.0; // Radius for the sweeping attack
     private static final float SWEEP_DAMAGE = 4.0f; // Damage dealt by the sweeping attack
@@ -34,8 +31,10 @@ public class Scythe extends Item {
     private static final float LIFE_STEAL_PERCENTAGE = 0.2f; // 20% of damage dealt is returned as health
     private static final double KNOCKBACK_STRENGTH = 1.0; // Strength of the knockback effect
 
-    public Scythe(Properties properties) {
-        super(properties);
+    private static final float ATTACK_DAMAGE = 6.0f; // Base attack damage
+
+    public ScytheItem(Tier tier, int attackDamageModifier, float attackSpeedModifier, Properties properties) {
+        super(tier, attackDamageModifier, attackSpeedModifier, properties);
     }
 
     @Override
@@ -94,5 +93,15 @@ public class Scythe extends Item {
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
         return UseAnim.SPEAR; // Display spear animation while using
+    }
+
+    @Override
+    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if (attacker instanceof Player player) {
+            target.hurt(player.damageSources().playerAttack(player), ATTACK_DAMAGE);
+            stack.hurtAndBreak(1, attacker, (e) -> e.broadcastBreakEvent(attacker.getUsedItemHand()));
+            return true;
+        }
+        return false;
     }
 }
