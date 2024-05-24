@@ -14,14 +14,11 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.type.capability.ICurio;
@@ -29,24 +26,20 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 import net.orangejewce.ojs_rpg_origins.config.ThiefGloveConfig;
 
-@Mod.EventBusSubscriber(modid = "ojs_rpg_origins")
 public class ThiefGloveItem extends Item implements ICurioItem {
     public ThiefGloveItem() {
         super(new Item.Properties().stacksTo(1).durability(50));
     }
 
-    @Override
-    public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target, InteractionHand hand) {
-        if (!player.level().isClientSide && player.isShiftKeyDown() && target instanceof Villager) {
+    public void interactWithVillager(ItemStack stack, Player player, Villager villager, InteractionHand hand) {
+        if (!player.level().isClientSide) {
             if (player.getCooldowns().isOnCooldown(this)) {
-                return InteractionResult.PASS; // If on cooldown, pass the interaction
+                return; // If on cooldown, do nothing
             }
 
-            Villager villager = (Villager) target;
             if (new Random().nextDouble() < ThiefGloveConfig.stealChance.get()) {
                 List<ItemStack> possibleItems = ThiefGloveConfig.getStealableItems();
                 ItemStack stolenItem = possibleItems.get(new Random().nextInt(possibleItems.size())).copy();
@@ -54,14 +47,11 @@ public class ThiefGloveItem extends Item implements ICurioItem {
                 player.level().playSound(null, player.blockPosition(), SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.PLAYERS, 1.0F, 1.0F);
                 stack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(hand)); // Reduce durability by 1 on success
                 player.getCooldowns().addCooldown(this, ThiefGloveConfig.cooldownTicks.get()); // Add cooldown
-                return InteractionResult.SUCCESS;
             } else {
                 player.level().playSound(null, player.blockPosition(), SoundEvents.VILLAGER_NO, SoundSource.NEUTRAL, 1.0F, 1.0F);
                 player.getCooldowns().addCooldown(this, ThiefGloveConfig.cooldownTicks.get()); // Add cooldown even if the steal fails
-                return InteractionResult.SUCCESS;
             }
         }
-        return InteractionResult.PASS;
     }
 
     @Override
@@ -73,16 +63,20 @@ public class ThiefGloveItem extends Item implements ICurioItem {
                 return stack;
             }
 
-            @Override
-            public void curioTick(SlotContext slotContext) {
+            public void curioTick(SlotContext slotContext, ItemStack stack) {
                 // Ticking logic if needed
             }
 
             public boolean canEquipFromUse(SlotContext slotContext, ItemStack stack) {
-                return slotContext.identifier().equals("thieves_pockets");
+                return true;
+            }
+
+            public boolean canRightClickEquip() {
+                return true;
             }
         });
     }
+
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag flag) {
@@ -104,7 +98,3 @@ public class ThiefGloveItem extends Item implements ICurioItem {
         super.appendHoverText(stack, level, tooltipComponents, flag);
     }
 }
-
-
-
-

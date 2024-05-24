@@ -16,6 +16,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.orangejewce.ojs_rpg_origins.block.ModBlocks;
 import net.orangejewce.ojs_rpg_origins.config.ThiefGloveConfig;
+import net.orangejewce.ojs_rpg_origins.event.ThiefGloveEventHandler;
 import net.orangejewce.ojs_rpg_origins.item.ModCreativeModTabs;
 import net.orangejewce.ojs_rpg_origins.item.ModItems;
 import net.orangejewce.ojs_rpg_origins.item.util.ModItemProperties;
@@ -33,6 +34,7 @@ public class OJs_OriginMod
     public OJs_OriginMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        MinecraftForge.EVENT_BUS.register(new ThiefGloveEventHandler());
 
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);

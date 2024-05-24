@@ -3,7 +3,7 @@
   "item.ojs_rpg_origins.raw_sapphire": "Raw Sapphire",
   "item.ojs_rpg_origins.whelm": "Whelm Bow",
   "item.ojs_rpg_origins.sapphire_staff": "Sapphire Staff",
-  "item.ojs_rpg_origins.scythe": "LifeHunt",
+  "item.ojs_rpg_origins.scythe": "Life Hunt",
   "item.ojs_rpg_origins.lute": "Bard's Lute",
   "item.ojs_rpg_origins.thief_glove": "Thieves Gloves",
 
@@ -33,7 +33,7 @@
 
   "creativetab.rpg_tab": "Oj's RPG Origins",
 
-  "tooltip.whelm": "§6Whelm Bow",
+  "tooltip.whelm": "§6Archer Bow",
   "tooltip.info_whelm": "§7A bow with powerful abilities.",
   "tooltip.multishot": "§7- §aMultishot:§7 Fires multiple arrows.",
   "tooltip.staff": "§6Staff",
@@ -46,11 +46,11 @@
   "tooltip.lifesteal_ability": "§7- §bLifesteal:§7 Converts a portion of damage dealt to health.",
 
   "tooltip.thief_glove": "§6Thief Glove",
-  "tooltip.info_thief_glove": "§7A sack that can steal items from villagers.",
+  "tooltip.info_thief_glove": "§7 Increases your stealth abilities.",
   "tooltip.steal_ability": "§7- §eSteal:§7 Has a chance to steal an item from a villager.",
   "tooltip.steal_shift_right_click": "§7- §a Shift Right Click:§7 Attempt to steal an item.",
   "tooltip.shift_info": "Hold \u00A76Shift\u00A7r for more info.",
-  "tooltip.thief_glove.details": "Thieves pockets Curio slot is solely for storing the Glove item, will not work intentionally. ",
+  "tooltip.thief_glove.details": "Allows you to steal items from villagers when crouching.",
 
   "curios.identifier.thieves_pockets": "Thieves Pockets"
 
