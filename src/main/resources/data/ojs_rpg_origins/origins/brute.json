@@ -8,7 +8,8 @@
         "ojs_rpg_origins:select_targets_strong",
         "origins:strong_arms_break_speed",
         "origins:natural_armor",
-        "ojs_rpg_origins:select_targets_weak"
+        "ojs_rpg_origins:select_targets_weak",
+        "ojs_rpg_origins:brute_item"
     ],
     "icon": {
         "item": "minecraft:iron_axe"
