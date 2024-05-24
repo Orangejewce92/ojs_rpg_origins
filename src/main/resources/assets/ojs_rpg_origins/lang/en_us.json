@@ -5,7 +5,7 @@
   "item.ojs_rpg_origins.sapphire_staff": "Sapphire Staff",
   "item.ojs_rpg_origins.scythe": "LifeHunt",
   "item.ojs_rpg_origins.lute": "Bard's Lute",
-  "item.ojs_rpg_origins.thief_glove": "Theives Gloves",
+  "item.ojs_rpg_origins.thief_glove": "Thieves Gloves",
 
   "block.ojs_rpg_origins.sapphire_block": "Block of Sapphire",
   "block.ojs_rpg_origins.sapphire_ore": "Sapphire Ore",
@@ -47,8 +47,9 @@
   "tooltip.thief_glove": "§6Thief Glove",
   "tooltip.info_thief_glove": "§7A glove that can steal items from villagers.",
   "tooltip.steal_ability": "§7- §aSteal:§7 Has a chance to steal an item from a villager.",
-  "tooltip.steal_shift_right_click": "§7- §bShift Right Click:§7 Attempt to steal an item. 10% chance. 5s cooldown."
+  "tooltip.steal_shift_right_click": "§7- §bShift Right Click:§7 Attempt to steal an item.",
+  "message.thief_glove.not_equipped": "You must equip the Thief Glove in the Thieves' Pockets slot to use it.",
 
-
+  "curios.identifier.thieves_pockets": "Thieves Pockets"
 
 }
