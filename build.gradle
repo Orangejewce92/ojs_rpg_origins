@@ -2,6 +2,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
+    id "org.jetbrains.gradle.plugin.idea-ext" version "1.1.7"
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     id 'org.spongepowered.mixin' version '0.7.+'
@@ -123,6 +124,10 @@ repositories {
     maven {
         url = "https://maven.theillusivec4.top/"
     }
+    maven {
+        url 'https://cursemaven.com'
+        content { includeGroup 'curse.maven' }
+    }
 }
 
 dependencies {
@@ -136,10 +141,11 @@ dependencies {
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.7.0+1.20.1:api")
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
-    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
-
+//     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
+   //  compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
+  //   runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
+    implementation fg.deobf("curse.maven:configured-457570:5180900")
+    // Other dependencies
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"
