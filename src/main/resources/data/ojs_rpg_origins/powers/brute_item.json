@@ -8,14 +8,7 @@
             {
                 "type": "origins:give",
                 "stack": {
-                    "item": "ojs_rpg_origins:whelm"
-                }
-            },
-            {
-                "type": "origins:give",
-                "stack": {
-                    "item": "minecraft:arrow",
-                    "amount": 32
+                    "item": "ojs_rpg_origins:sapphire_misery"
                 }
             }
         ]

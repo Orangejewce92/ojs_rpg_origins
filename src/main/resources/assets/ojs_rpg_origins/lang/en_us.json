@@ -3,6 +3,7 @@
   "item.ojs_rpg_origins.raw_sapphire": "Raw Sapphire",
   "item.ojs_rpg_origins.whelm": "Whelm Bow",
   "item.ojs_rpg_origins.sapphire_staff": "Sapphire Staff",
+  "item.ojs_rpg_origins.sapphire_misery": "Sapphire Misery",
   "item.ojs_rpg_origins.scythe": "Life Hunt",
   "item.ojs_rpg_origins.lute": "Bard's Lute",
   "item.ojs_rpg_origins.thief_glove": "Thieves Gloves",
@@ -52,6 +53,11 @@
   "tooltip.shift_info": "Hold \u00A76Shift\u00A7r for more info.",
   "tooltip.thief_glove.details": "Allows you to steal items from villagers when crouching.",
 
-  "curios.identifier.thieves_pockets": "Thieves Pockets"
+  "tooltip.sapphire_misery": "§6Sapphire Misery",
+  "tooltip.info_sapphire_misery": "§7A mighty axe infused with the power of sapphires. Grants incredible strength and resilience to its wielder.",
+  "tooltip.ability": "§7 §bAbilities:",
+  "tooltip.special_ability": "§7Right-click to activate a powerful ability.",
+
+"curios.identifier.thieves_pockets": "Thieves Pockets"
 
 }
