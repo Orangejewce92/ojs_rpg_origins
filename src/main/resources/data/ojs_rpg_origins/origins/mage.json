@@ -1,0 +1,15 @@
+{
+    "name": "Mage",
+    "description": "You're a mage who can always find the magic in things.",
+    "powers": [
+        "ojs_rpg_origins:fastcure",
+        "ojs_rpg_origins:untrained",
+        "ojs_rpg_origins:water_walk",
+        "ojs_rpg_origins:unwieldly",
+        "ojs_rpg_origins:mage_item"
+    ],
+    "icon": {
+        "item": "ojs_rpg_items:sapphire_staff"
+    },
+    "impact": 2
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Brute",
+    "description": "You're a heavy hitting machine with an arsenal of axes.",
+    "powers": [
+        "ojs_rpg_origins:no_time_to_rest",
+        "ojs_rpg_origins:no_shield",
+        "ojs_rpg_origins:strong_arms",
+        "ojs_rpg_origins:select_targets_strong",
+        "ojs_rpg_origins:strong_arms_break_speed",
+        "ojs_rpg_origins:natural_armor",
+        "ojs_rpg_origins:select_targets_weak"
+    ],
+    "icon": {
+        "item": "minecraft:iron_axe"
+    },
+    "impact": 3
+}

@@ -1,0 +1,6 @@
+{
+    "name": "Forgivable",
+    "description": "Pillagers are worried with your alliance with villagers, you can no longer start raids.",
+    "type": "origins:effect_immunity",
+    "effect": "minecraft:bad_omen"
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Weak",
+    "description": "Your body wasn't built for strong combat, so it can't heal as fast when at low health.",
+    "condition": {
+        "type": "origins:health",
+        "comparison": "<",
+        "compare_to": 6
+    },
+    "type": "origins:modify_healing",
+    "modifier": {
+        "operation": "multiply_base",
+        "value": -0.5
+    }
+}

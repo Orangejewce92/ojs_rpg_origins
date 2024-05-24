@@ -1,0 +1,22 @@
+{
+    "name": "Cleric",
+    "description": "You're there to heal and help others. You'll rarely be seen directly attacking others.",
+    "powers": [
+        "ojs_rpg_origins:villagefriendly",
+        "ojs_rpg_origins:untrained",
+        "ojs_rpg_origins:brewer_jumpboost",
+        "ojs_rpg_origins:brewer_speed",
+        "ojs_rpg_origins:brewer_strength",
+        "ojs_rpg_origins:brewer_regeneration",
+        "ojs_rpg_origins:heal_pool",
+        "ojs_rpg_origins:forgivable",
+        "ojs_rpg_origins:pure",
+        "ojs_rpg_origins:pure_color",
+        "ojs_rpg_origins:pure_shake",
+        "ojs_rpg_origins:one_with_the_world"
+    ],
+    "icon": {
+        "item": "minecraft:emerald"
+    },
+    "impact": 1
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Bard",
+    "description": "You're an all around music player. You can use your soical skills to help anyone you desire.",
+    "powers": [
+        "ojs_rpg_origins:decoy",
+        "origins:more_exhaustion",
+        "ojs_rpg_origins:not_the_smartest",
+        "ojs_rpg_origins:charismatic",
+        "ojs_rpg_origins:charismatic_toggle",
+        "ojs_rpg_origins:bard_item"
+    ],
+    "icon": {
+        "item": "ojs_rpg_origins:lute"
+    },
+    "impact": 2
+}

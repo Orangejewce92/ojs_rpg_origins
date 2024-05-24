@@ -1,0 +1,9 @@
+{
+    "name": "Unwieldly",
+    "description": "Since you're only trained in magic, all damage you deal is weaker.",
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "operation": "multiply_base",
+        "value": -0.25
+    }
+}

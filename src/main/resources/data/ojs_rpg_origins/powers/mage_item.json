@@ -1,0 +1,16 @@
+{
+    "name": "Sapphire Staff",
+    "description": "Powerful staff not just for smacking but can shoot fireballs weak and strong(hold)",
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:give",
+                "stack": {
+                    "item": "ojs_rpg_origins:sapphire_staff"
+                }
+            }
+        ]
+    }
+}

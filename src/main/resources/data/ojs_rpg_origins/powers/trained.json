@@ -1,0 +1,9 @@
+{
+    "name": "Trained",
+    "description": "You've trained so hard, no matter what, you deal more damage.",
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "operation": "multiply_base_multiplicative",
+        "value": 0.1
+    }
+}
