@@ -1,0 +1,165 @@
+{
+  "origins": [
+    {
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "ojs_rpg_origins:half-elf/skills/animal_handling",
+            "inverted": true
+          },
+          {
+            "type": "origins:origin",
+            "layer": "origins:feats/variant_human_feats",
+            "origin": "ojs_rpg_origins:variant_human/feats/skilled"
+          }
+        ]
+      },
+      "origins": [
+        "ojs_rpg_origins:half-elf/skills/animal_handling"
+      ]
+    },
+    {
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "ojs_rpg_origins:half-elf/skills/arcana",
+            "inverted": true
+          },
+          {
+            "type": "origins:origin",
+            "origin": "ojs_rpg_origins:variant_human/feats/skilled"
+          }
+        ]
+      },
+      "origins": [
+        "ojs_rpg_origins:half-elf/skills/arcana"
+      ]
+    },
+    {
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "ojs_rpg_origins:half-elf/skills/athletics",
+            "inverted": true
+          },
+          {
+            "type": "origins:origin",
+            "layer": "origins:feats/variant_human_feats",
+            "origin": "ojs_rpg_origins:variant_human/feats/skilled"
+          }
+        ]
+      },
+      "origins": [
+        "ojs_rpg_origins:half-elf/skills/athletics"
+      ]
+    },
+    {
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "ojs_rpg_origins:half-elf/skills/medicine",
+            "inverted": true
+          },
+          {
+            "type": "origins:origin",
+            "layer": "origins:feats/variant_human_feats",
+            "origin": "ojs_rpg_origins:variant_human/feats/skilled"
+          }
+        ]
+      },
+      "origins": [
+        "ojs_rpg_origins:half-elf/skills/medicine"
+      ]
+    },
+    {
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "ojs_rpg_origins:half-elf/skills/nature",
+            "inverted": true
+          },
+          {
+            "type": "origins:origin",
+            "layer": "origins:feats/variant_human_feats",
+            "origin": "ojs_rpg_origins:variant_human/feats/skilled"
+          }
+        ]
+      },
+      "origins": [
+        "ojs_rpg_origins:half-elf/skills/nature"
+      ]
+    },
+    {
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "ojs_rpg_origins:half-elf/skills/sleight_of_hand",
+            "inverted": true
+          },
+          {
+            "type": "origins:origin",
+            "layer": "origins:feats/variant_human_feats",
+            "origin": "ojs_rpg_origins:variant_human/feats/skilled"
+          }
+        ]
+      },
+      "origins": [
+        "ojs_rpg_origins:half-elf/skills/sleight_of_hand"
+      ]
+    },
+    {
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "ojs_rpg_origins:half-elf/skills/stealth",
+            "inverted": true
+          },
+          {
+            "type": "origins:origin",
+            "layer": "origins:feats/variant_human_feats",
+            "origin": "ojs_rpg_origins:variant_human/feats/skilled"
+          }
+        ]
+      },
+      "origins": [
+        "ojs_rpg_origins:half-elf/skills/stealth"
+      ]
+    },
+    {
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:origin",
+            "origin": "ojs_rpg_origins:half-elf/skills/survival",
+            "inverted": true
+          },
+          {
+            "type": "origins:origin",
+            "layer": "origins:feats/variant_human_feats",
+            "origin": "ojs_rpg_origins:variant_human/feats/skilled"
+          }
+        ]
+      },
+      "origins": [
+        "ojs_rpg_origins:half-elf/skills/survival"
+      ]
+    }
+  ],
+  "order": 4,
+  "name": "Skilled"
+}

@@ -1,5 +1,6 @@
 package net.orangejewce.ojs_rpg_origins.event;
 
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.npc.Villager;
@@ -16,22 +17,26 @@ public class ThiefGloveEventHandler {
     @SubscribeEvent
     public static void onEntityInteract(PlayerInteractEvent.EntityInteractSpecific event) {
         Player player = event.getEntity();
-        LivingEntity target = (LivingEntity) event.getTarget();
+        Entity targetEntity = event.getTarget();
 
-        // Check if the player is crouching and the target is a Villager
-        if (player.isCrouching() && target instanceof Villager) {
-            // Check the Curios slots for the Thief Glove
-            CuriosApi.getCuriosHelper().findFirstCurio(player, item -> item.getItem() instanceof ThiefGloveItem).ifPresent(triple -> {
-                ItemStack thiefGlove = triple.stack();
+        // Check if the target entity is a LivingEntity
+        if (targetEntity instanceof LivingEntity) {
+            LivingEntity target = (LivingEntity) targetEntity;
 
-                // Call the Thief Glove interaction method
-                ThiefGloveItem thiefGloveItem = (ThiefGloveItem) thiefGlove.getItem();
-                thiefGloveItem.interactWithVillager(thiefGlove, player, (Villager) target, event.getHand());
+            // Check if the player is crouching and the target is a Villager
+            if (player.isCrouching() && target instanceof Villager) {
+                // Check the Curios slots for the Thief Glove
+                CuriosApi.getCuriosHelper().findFirstCurio(player, item -> item.getItem() instanceof ThiefGloveItem).ifPresent(triple -> {
+                    ItemStack thiefGlove = triple.stack();
 
-                // Cancel the event to prevent default interaction
-                event.setCanceled(true);
-            });
+                    // Call the Thief Glove interaction method
+                    ThiefGloveItem thiefGloveItem = (ThiefGloveItem) thiefGlove.getItem();
+                    thiefGloveItem.interactWithVillager(thiefGlove, player, (Villager) target, event.getHand());
+
+                    // Cancel the event to prevent default interaction
+                    event.setCanceled(true);
+                });
+            }
         }
     }
-
 }

@@ -47,6 +47,8 @@ public class WhelmBow extends BowItem {
                 .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
         tooltipComponents.add(Component.translatable("tooltip.multishot")
                 .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
+        tooltipComponents.add(Component.translatable("tooltip.powerful_whelm")
+                .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF0000)).withBold(true)));
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
     }
 
@@ -87,13 +89,26 @@ public class WhelmBow extends BowItem {
                         arrow2 = customArrow(arrow2);
                         arrow3 = customArrow(arrow3);
 
-                        arrow1.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity * 3.0F, 1.0F);
-                        arrow2.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity * 3.0F, 1.0F);
-                        arrow3.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity * 3.0F, 1.0F);
+                        // Increase arrow velocity
+                        arrow1.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity * 4.0F, 1.0F);
+                        arrow2.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity * 4.0F, 1.0F);
+                        arrow3.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity * 4.0F, 1.0F);
 
                         // Adjust the direction of the second and third arrows
-                        arrow2.setDeltaMovement(arrow2.getDeltaMovement().add(0.1D, 0.0D, 0.1D));
-                        arrow3.setDeltaMovement(arrow3.getDeltaMovement().add(-0.1D, 0.0D, -0.1D));
+                        arrow2.setDeltaMovement(arrow2.getDeltaMovement().add(0.15D, 0.0D, 0.15D));
+                        arrow3.setDeltaMovement(arrow3.getDeltaMovement().add(-0.15D, 0.0D, -0.15D));
+
+                        // Add damage boost
+                        arrow1.setBaseDamage(arrow1.getBaseDamage() + 2.0D);
+                        arrow2.setBaseDamage(arrow2.getBaseDamage() + 2.0D);
+                        arrow3.setBaseDamage(arrow3.getBaseDamage() + 2.0D);
+
+                        // Add custom particle effects
+                        for (int i = 0; i < 10; i++) {
+                            world.addParticle(ParticleTypes.CRIT, arrow1.getX() + (world.random.nextDouble() - 0.5D) * (double)arrow1.getBbWidth(), arrow1.getY() + world.random.nextDouble() * (double)arrow1.getBbHeight(), arrow1.getZ() + (world.random.nextDouble() - 0.5D) * (double)arrow1.getBbWidth(), 0.0D, 0.0D, 0.0D);
+                            world.addParticle(ParticleTypes.CRIT, arrow2.getX() + (world.random.nextDouble() - 0.5D) * (double)arrow2.getBbWidth(), arrow2.getY() + world.random.nextDouble() * (double)arrow2.getBbHeight(), arrow2.getZ() + (world.random.nextDouble() - 0.5D) * (double)arrow2.getBbWidth(), 0.0D, 0.0D, 0.0D);
+                            world.addParticle(ParticleTypes.CRIT, arrow3.getX() + (world.random.nextDouble() - 0.5D) * (double)arrow3.getBbWidth(), arrow3.getY() + world.random.nextDouble() * (double)arrow3.getBbHeight(), arrow3.getZ() + (world.random.nextDouble() - 0.5D) * (double)arrow3.getBbWidth(), 0.0D, 0.0D, 0.0D);
+                        }
 
                         stack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(player.getUsedItemHand()));
 
@@ -116,4 +131,3 @@ public class WhelmBow extends BowItem {
         }
     }
 }
-

@@ -37,6 +37,7 @@
   "tooltip.whelm": "§6Archer Bow",
   "tooltip.info_whelm": "§7A bow with powerful abilities.",
   "tooltip.multishot": "§7- §aMultishot:§7 Fires multiple arrows.",
+  "tooltip.powerful_whelm": "§7- §e:§7: Arrows have extra damage with this bow.",
   "tooltip.staff": "§6Staff",
   "tooltip.info_staff": "§7A magical staff with powerful abilities.",
   "tooltip.ability": "§7- §aAbility:§7 Unleashes magical power.",
