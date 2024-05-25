@@ -9,7 +9,7 @@
         "ojs_rpg_origins:mage_item"
     ],
     "icon": {
-        "item": "ojs_rpg_items:sapphire_staff"
+        "item": "ojs_rpg_origins:sapphire_staff"
     },
     "impact": 2
 }

@@ -5,7 +5,8 @@
         "ojs_rpg_origins:mage",
         "ojs_rpg_origins:bard",
         "ojs_rpg_origins:thief",
-        "ojs_rpg_origins:brute"
+        "ojs_rpg_origins:brute",
+        "ojs_rpg_origins:variant_human"
     ],
     "enabled": true
 }
