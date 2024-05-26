@@ -1,9 +1,0 @@
-{
-    "name": "Prepared",
-    "description": "You're always prepared, so you start your journy with a shield.",
-    "type": "origins:starting_equipment",
-    "stack": {
-        "item": "minecraft:shield",
-        "slot": 40
-    }
-}

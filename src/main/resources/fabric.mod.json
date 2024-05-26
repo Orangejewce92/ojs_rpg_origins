@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "ojs_rpg_origins",
+	"version": "${version}",
+	"name": "ojs_rpg_origins",
+	"description": "An RPG mod with various origins and custom items.",
+	"authors": [
+		"Orangejewce92"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/ojs_rpg_origins/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.orangejewce.ojs_rpg_origins.OjsMod"
+		],
+		"client": [
+			"net.orangejewce.ojs_rpg_origins.OjsModClient"
+		],
+		"fabric-datagen": [
+			"net.orangejewce.ojs_rpg_origins.OjsModDataGenerator"
+		]
+	},
+	"mixins": [
+		"ojs_rpg_origins.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

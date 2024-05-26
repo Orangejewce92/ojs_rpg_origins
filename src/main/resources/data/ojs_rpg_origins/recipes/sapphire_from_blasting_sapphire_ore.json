@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "sapphire",
+  "ingredient": {
+    "item": "ojs_rpg_origins:sapphire_ore"
+  },
+  "result": "ojs_rpg_origins:sapphire"
+}

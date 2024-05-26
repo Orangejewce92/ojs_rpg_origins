@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "ojs_rpg_origins:block/sapphire_block"
+  }
+}

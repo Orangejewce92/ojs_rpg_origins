@@ -1,9 +1,0 @@
-{
-    "name": "No Time To Rest",
-    "description": "You can only heal naturally while you're sprinting.",
-    "condition": {
-        "inverted": true,
-        "type": "origins:sprinting"
-    },
-    "type": "origins:disable_regen"
-}
