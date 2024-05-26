@@ -1,0 +1,18 @@
+{
+    "name": "Beserker",
+    "description": "Let him rage, no time for talk.",
+    "powers": [
+        "ojs_rpg_origins:hp",
+        "ojs_rpg_origins:rage",
+        "ojs_rpg_origins:rage_timer",
+        "ojs_rpg_origins:unarmored",
+        "origins:no_shield",
+        "ojs_rpg_origins:beserker_item",
+        "ojs_rpg_origins:variant_human/skills",
+        "ojs_rpg_origins:variant_human/feat"
+    ],
+    "icon": {
+        "item": "ojs_rpg_origins:balmung"
+    },
+    "impact": 3
+}

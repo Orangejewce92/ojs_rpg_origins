@@ -1,0 +1,28 @@
+{
+    "name": "Rage Timer",
+    "hidden": true,
+    "type": "origins:multiple",
+    "timer": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:barbarian/rage_resource",
+            "change": -1
+        }
+    },
+    "strength": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "addition",
+            "value": 3
+        }
+    },
+    "resistance": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": -0.8
+        }
+    }
+}

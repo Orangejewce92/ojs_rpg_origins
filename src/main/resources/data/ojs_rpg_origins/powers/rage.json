@@ -1,0 +1,58 @@
+{
+    "name": "Rage",
+    "description": "In battle, you fight with primal ferocity, granting yourself 60 seconds of strength and resistance.",
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1200,
+        "start_value": 0,
+        "min_action": {
+            "type": "origins:revoke_power",
+            "power": "*:barbarian/rage_timer",
+            "source": "*:*"
+        },
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 5,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": "<",
+                "compare_to": 1200
+            }
+        }
+    },
+    "charge": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": 1
+        },
+        "condition": {
+            "type": "origins:power",
+            "power": "*:barbarian/rage_timer",
+            "inverted": true
+        }
+    },
+    "grant": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.origins.primary_key"
+        },
+        "entity_action": {
+            "type": "origins:grant_power",
+            "power": "*:barbarian/rage_timer",
+            "source": "*:*"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": "==",
+            "compare_to": 1200
+        }
+    }
+}

@@ -13,7 +13,9 @@
         "ojs_rpg_origins:pure",
         "ojs_rpg_origins:pure_color",
         "ojs_rpg_origins:pure_shake",
-        "ojs_rpg_origins:one_with_the_world"
+        "ojs_rpg_origins:one_with_the_world",
+        "ojs_rpg_origins:variant_human/skills",
+        "ojs_rpg_origins:variant_human/feat"
     ],
     "icon": {
         "item": "minecraft:emerald"

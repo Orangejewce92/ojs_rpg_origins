@@ -13,7 +13,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
         () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> SAPPHIRE_STAFF = ITEMS.register("sapphire_staff",
             () -> new SapphireStaff(new Item.Properties().stacksTo(1).durability(600).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> SCYTHE = ITEMS.register("scythe",
@@ -27,7 +26,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
      public static final RegistryObject<Item> WHELM = ITEMS.register("whelm",
             () -> new WhelmBow(new Item.Properties().stacksTo(1).durability(600).rarity(Rarity.RARE)));
-
+    public static final RegistryObject<Item> BALMUNG = ITEMS.register("balmung",
+            () -> new Balmung());
     public static final RegistryObject<Item> SAPPHIRE_SWORD = ITEMS.register("sapphire_sword",
             () -> new SwordItem(ModToolTiers.SAPPHIRE, 4, -2, new Item.Properties()));
     public static final RegistryObject<Item> SAPPHIRE_PICKAXE = ITEMS.register("sapphire_pickaxe",

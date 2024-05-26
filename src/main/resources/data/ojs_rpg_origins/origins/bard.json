@@ -8,7 +8,9 @@
         "ojs_rpg_origins:not_the_smartest",
         "ojs_rpg_origins:charismatic",
         "ojs_rpg_origins:charismatic_toggle",
-        "ojs_rpg_origins:bard_item"
+        "ojs_rpg_origins:bard_item",
+        "ojs_rpg_origins:variant_human/skills",
+        "ojs_rpg_origins:variant_human/feat"
     ],
     "icon": {
         "item": "ojs_rpg_origins:lute"
