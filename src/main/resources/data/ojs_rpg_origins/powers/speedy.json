@@ -1,0 +1,17 @@
+{
+    "name": "Speedy",
+    "description": "You're faster than normal.",
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 1,
+    "max_stacks": 1,
+    "duration_per_stack": 100,
+    "tick_rate": 10,
+    "effect": {
+        "effect": "speed",
+        "duration": 10000,
+        "amplifier": 0,
+        "is_ambient": true,
+        "show_particles": false,
+        "show_icon": false
+    }
+}

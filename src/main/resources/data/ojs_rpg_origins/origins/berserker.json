@@ -1,0 +1,15 @@
+{
+    "name": "Berserker",
+    "description": "Let him rage, no time for talk.",
+    "powers": [
+        "ojs_rpg_origins:hp",
+        "ojs_rpg_origins:rage",
+        "ojs_rpg_origins:unarmored",
+        "origins:no_shield",
+        "ojs_rpg_origins:berserker_item"
+    ],
+    "icon": {
+        "item": "ojs_rpg_origins:balmung"
+    },
+    "impact": 3
+}

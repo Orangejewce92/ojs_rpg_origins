@@ -1,0 +1,10 @@
+{
+    "name": "Fast Cure",
+    "description": "Your immune to poison, weakness, and slowness.",
+    "type": "origins:effect_immunity",
+    "effects": [
+        "minecraft:poison",
+        "minecraft:weakness",
+        "minecraft:slowness"
+    ]
+}

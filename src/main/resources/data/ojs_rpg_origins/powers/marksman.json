@@ -1,0 +1,9 @@
+{
+    "name": "Marksman",
+    "description": "You're a trained professional in bows and crossbows, and deal significantly more damage with them.",
+    "type": "origins:modify_projectile_damage",
+    "modifier": {
+        "operation": "multiply_base",
+        "value": 1.25
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Brute",
+    "description": "Forged in the crucible of battle, the Brute is a force of sheer strength and unyielding will. With each swing of their weapon, they shatter defenses and break the resolve of their enemies, embodying raw power and relentless fury.",
+    "powers": [
+        "ojs_rpg_origins:no_time_to_rest",
+        "origins:no_shield",
+        "origins:strong_arms",
+        "ojs_rpg_origins:select_targets_strong",
+        "origins:strong_arms_break_speed",
+        "origins:natural_armor",
+        "ojs_rpg_origins:select_targets_weak",
+        "ojs_rpg_origins:brute_item"
+    ],
+    "icon": {
+        "item": "minecraft:iron_axe"
+    },
+    "impact": 3
+}

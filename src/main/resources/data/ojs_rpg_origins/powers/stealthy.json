@@ -1,0 +1,10 @@
+{
+    "name": "Stealthy",
+    "description": "Whenever you crouch, you can't be seen, but you can't attack while you're invisible, and 3 seconds after.",
+    "condition": {
+        "type": "origins:sneaking"
+    },
+    "type": "origins:invisibility",
+    "render_armor": false,
+    "render_outline": true
+}

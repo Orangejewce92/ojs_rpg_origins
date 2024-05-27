@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "ojs_rpg_origins",
 	"version": "${version}",
-	"name": "ojs_rpg_origins",
+	"name": "OJs RPG Origins",
 	"description": "An RPG mod with various origins and custom items.",
 	"authors": [
 		"Orangejewce92"

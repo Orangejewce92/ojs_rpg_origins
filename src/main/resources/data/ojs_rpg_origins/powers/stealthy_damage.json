@@ -1,0 +1,20 @@
+{
+    "name": "Steathy Damage",
+    "description": "The damage effect of stealthy",
+    "hidden": true,
+    "condition": {
+        "type": "origins:sneaking"
+    },
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 1,
+    "max_stacks": 1,
+    "duration_per_stack": 60,
+    "tick_rate": 10,
+    "effect": {
+        "effect": "minecraft:weakness",
+        "duration": 60,
+        "amplifier": 255,
+        "show_particles": false,
+        "show_icon": false
+    }
+}

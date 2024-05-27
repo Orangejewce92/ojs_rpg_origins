@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ojs_rpg_origins:item/raw_sapphire"
+  }
+}

@@ -30,7 +30,7 @@ public class ModItems {
     public static final Item LUTE = registerItem("lute",
             new HarmonicLuteItem());
     public static final Item THIEF_GLOVE = registerItem("thief_glove",
-            new ThiefGloveItem());
+            new ThiefGloveItem(new FabricItemSettings().maxCount(1).maxDamage(50).rarity(Rarity.EPIC)));
     public static final Item RAW_SAPPHIRE = registerItem("raw_sapphire", new Item(new FabricItemSettings()));
     public static final Item SAPPHIRE_PICKAXE = registerItem("sapphire_pickaxe",
             new PickaxeItem(ModToolMaterial.SAPPHIRE, 2, -1f, new FabricItemSettings()));

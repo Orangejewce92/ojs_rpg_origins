@@ -1,0 +1,31 @@
+{
+    "name": "Rage",
+    "description": "In battle, you fight with primal ferocity, granting yourself 60 seconds of strength and resistance.",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:heal",
+                "amount": 20
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @s resistance 25 2 true"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @s strength 25 2 true"
+            }
+        ]
+    },
+    "cooldown": 2400,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+        "bar_index": 0
+    },
+    "key": {
+        "key": "key.origins.primary_active"
+    }
+}

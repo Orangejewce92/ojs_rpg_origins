@@ -13,6 +13,7 @@ import net.orangejewce.ojs_rpg_origins.config.ThiefGloveConfig;
 import net.orangejewce.ojs_rpg_origins.item.ModItemGroups;
 import net.orangejewce.ojs_rpg_origins.item.ModItems;
 import net.orangejewce.ojs_rpg_origins.item.custom.SapphireMiseryItem;
+import net.orangejewce.ojs_rpg_origins.item.util.ModItemProperties;
 import net.orangejewce.ojs_rpg_origins.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,8 +28,9 @@ public class OjsMod implements ModInitializer {
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-		ThiefGloveConfig.register();
+//		ThiefGloveConfig.register();
 		ModWorldGeneration.generateModWorldGen();
+		ModItemProperties.addCustomItemProperties();
 
 
 		ServerTickEvents.END_SERVER_TICK.register(server -> {

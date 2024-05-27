@@ -1,0 +1,15 @@
+{
+    "name": "Select Targets",
+    "description": "You are stronger against mobs with a great amount of health, but are weaker against mobs with lower health.",
+    "type": "origins:modify_damage_dealt",
+    "target_condition": {
+        "type": "origins:attribute",
+        "attribute": "generic.max_health",
+        "comparison": ">=",
+        "compare_to": 50
+    },
+    "modifier": {
+        "operation": "multiply_base",
+        "value": 1
+    }
+}

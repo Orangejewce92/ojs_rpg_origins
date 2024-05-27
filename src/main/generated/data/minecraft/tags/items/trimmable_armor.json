@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "ojs_rpg_origins:sapphire_helmet",
+    "ojs_rpg_origins:sapphire_chestplate",
+    "ojs_rpg_origins:sapphire_leggings",
+    "ojs_rpg_origins:sapphire_boots"
+  ]
+}

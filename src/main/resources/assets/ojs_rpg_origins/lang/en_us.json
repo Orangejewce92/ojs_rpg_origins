@@ -51,11 +51,12 @@
   "tooltip.special_ability_2": "§7Right-click to activate a powerful ability.",
 
   "tooltip.thief_glove": "§6Thief Glove",
-  "tooltip.info_thief_glove": "§7 Increases your stealth abilities.",
+  "tooltip.info_thief_glove": "A magical glove that allows you to steal items from villagers.",
   "tooltip.steal_ability": "§7- §eSteal:§7 Has a chance to steal an item from a villager.",
   "tooltip.steal_shift_right_click": "§7- §a Shift Right Click:§7 Attempt to steal an item.",
   "tooltip.shift_info": "Hold \u00A76Shift\u00A7r for more info.",
-  "tooltip.thief_glove.details": "Allows you to steal items from villagers when crouching.",
+  "tooltip.thief_glove.details": "§7 This glove can steal items from villagers when you hit them.",
+  "tooltip.hit_to_steal": "Crouch and hit a villager to steal an item.",
 
   "tooltip.harmonic_lute": "§6Harmonic Lute",
   "tooltip.info_harmonic_lute": "§7Plays music that grants passive and defensive powers.",

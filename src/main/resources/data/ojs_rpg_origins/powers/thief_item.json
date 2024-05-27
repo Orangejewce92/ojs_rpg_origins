@@ -1,0 +1,23 @@
+{
+    "name": "Thieves Gloves (bag)",
+    "description": "Shift right click with this item to steal from villagers",
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:give",
+                "stack": {
+                    "item": "ojs_rpg_origins:thief_glove"
+                }
+            },
+            {
+                "type": "origins:give",
+                "stack": {
+                    "item": "ojs_rpg_origins:sapphire",
+                    "amount": 6
+                }
+            }
+        ]
+    }
+}

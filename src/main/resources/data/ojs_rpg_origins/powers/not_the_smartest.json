@@ -1,0 +1,9 @@
+{
+    "name": "Not the Smartest",
+    "description": "You're into music, and that's it. You always gain less XP points",
+    "type": "origins:modify_xp_gain",
+    "modifier": {
+        "operation": "multiply_base",
+        "value": -0.35
+    }
+}

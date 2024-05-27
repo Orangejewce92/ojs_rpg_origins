@@ -1,0 +1,24 @@
+{
+    "name": "Quiver",
+    "description": "You always have a quiver to make sure you have back-up arrows. You can put anything in it, but if you die, everything except arrows will be left.",
+    "type": "origins:inventory",
+    "title": "Quiver",
+    "container_type": "hopper",
+    "drop_on_death": true,
+    "drop_on_death_filter": {
+        "inverted": true,
+        "type": "origins:ingredient",
+        "ingredient": [
+            {
+                "item": "minecraft:arrow"
+            },
+            {
+                "item": "minecraft:spectral_arrow"
+            },
+            {
+                "item": "minecraft:tipped_arrow"
+            }
+        ]
+    },
+    "recoverable": true
+}

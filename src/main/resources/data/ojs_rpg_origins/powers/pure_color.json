@@ -1,0 +1,11 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:dimension",
+        "dimension": "minecraft:the_nether"
+    },
+    "type": "origins:model_color",
+    "red": 0.7,
+    "green": 0.5,
+    "blue": 0.2
+}

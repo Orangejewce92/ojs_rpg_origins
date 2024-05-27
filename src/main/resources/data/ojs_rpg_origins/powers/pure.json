@@ -1,0 +1,9 @@
+{
+    "name": "Pure",
+    "description": "You're so pure, you can't bare the nether. It corrupts your body so you can't naturally heal.",
+    "condition": {
+        "type": "origins:dimension",
+        "dimension": "minecraft:the_nether"
+    },
+    "type": "origins:disable_regen"
+}

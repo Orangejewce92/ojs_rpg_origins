@@ -1,0 +1,13 @@
+{
+    "origins": [
+        "ojs_rpg_origins:archer",
+        "ojs_rpg_origins:cleric",
+        "ojs_rpg_origins:mage",
+        "ojs_rpg_origins:bard",
+        "ojs_rpg_origins:thief",
+        "ojs_rpg_origins:brute",
+        "ojs_rpg_origins:berserker",
+        "ojs_rpg_origins:variant_human"
+    ],
+    "enabled": true
+}

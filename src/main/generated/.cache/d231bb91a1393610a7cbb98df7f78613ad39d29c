@@ -1,0 +1,6 @@
+// 1.20.1	2024-05-27T01:32:36.7961928	ojs_rpg_origins/Tags for minecraft:block
+208b75ac530326d3002ebf363ec7d3246489620f data\minecraft\tags\blocks\needs_diamond_tool.json
+8cc34656a29ad8d39e60e0db00276b676adffe25 data\minecraft\tags\blocks\needs_stone_tool.json
+101957867134ecd78b2c2ca6c69c125f09c0f1bc data\minecraft\tags\blocks\needs_iron_tool.json
+b660a31729c14fa14c6a13d594947a4ba42629cd data\minecraft\tags\blocks\mineable\pickaxe.json
+a2c529e20e8a05cc03ce328b96d67489d62107ed data\fabric\tags\blocks\needs_tool_level_4.json
