@@ -10,9 +10,7 @@
         "ojs_rpg_origins:thefty",
         "ojs_rpg_origins:stealthy_damage",
         "ojs_rpg_origins:weak",
-        "ojs_rpg_origins:thief_item",
-        "ojs_rpg_origins:variant_human/skills",
-        "ojs_rpg_origins:variant_human/feat"
+        "ojs_rpg_origins:thief_item"
     ],
     "icon": {
         "item": "ojs_rpg_origins:thief_glove"

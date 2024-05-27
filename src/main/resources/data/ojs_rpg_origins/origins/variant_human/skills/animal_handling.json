@@ -1,34 +1,10 @@
 {
-  "hidden": true,
-  "type": "origins:multiple",
-
-  "no_skilled_feat": {
-    "type": "origins:modify_damage_dealt",
-    "bientity_condition": {
-      "type": "origins:owner"
-    },
-    "modifier": {
-      "operation": "multiply_total",
-      "value": -1
-    },
-    "condition": {
-      "type": "origins:origin",
-      "origin": "digs_dnd_origins:variant_human/feats/skilled",
-      "inverted": true
-    }
-  },
-  "skilled_feat": {
-    "type": "origins:modify_damage_dealt",
-    "bientity_condition": {
-      "type": "origins:owner"
-    },
-    "modifier": {
-      "operation": "multiply_total",
-      "value": -0.5
-    },
-    "condition": {
-      "type": "origins:origin",
-      "origin": "digs_dnd_origins:variant_human/feats/skilled"
-    }
-  }
+	"powers": [
+		"digs_dnd_origins:half-elf/skills/animal_handling"
+	],
+	"icon": "minecraft:carrot",
+	"order": 1,
+	"impact": 0,
+	"name": "Animal Handling",
+	"description": "You deal no damage to animals tamed by you."
 }

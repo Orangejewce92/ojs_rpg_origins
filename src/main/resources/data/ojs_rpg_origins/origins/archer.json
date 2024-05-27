@@ -7,9 +7,7 @@
         "ojs_rpg_origins:inexperienced",
         "ojs_rpg_origins:resourceful",
         "ojs_rpg_origins:quiver",
-        "ojs_rpg_origins:archer_item",
-        "ojs_rpg_origins:variant_human/skills",
-        "ojs_rpg_origins:variant_human/feat"
+        "ojs_rpg_origins:archer_item"
     ],
     "icon": {
         "item": "ojs_rpg_origins:whelm"

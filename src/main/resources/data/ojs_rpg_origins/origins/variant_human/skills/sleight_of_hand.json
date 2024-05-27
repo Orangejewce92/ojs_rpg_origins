@@ -1,5 +1,10 @@
 {
-  "hidden": true,
-  "type": "origins:prevent_game_event",
-  "tag": "digs_dnd_origins:sleight_of_hand_skill"
+	"powers": [
+		"digs_dnd_origins:half-elf/skills/sleight_of_hand"
+	],
+	"icon": "minecraft:gray_dye",
+	"order": 1,
+	"impact": 0,
+	"name": "Sleight of Hand",
+	"description": "Most of your actions do not trigger sculk sensors."
 }
