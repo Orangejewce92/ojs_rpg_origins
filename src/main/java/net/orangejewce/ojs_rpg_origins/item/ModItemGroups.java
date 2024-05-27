@@ -26,6 +26,24 @@ public class ModItemGroups {
                         entries.add(ModBlocks.NETHER_SAPPHIRE_ORE);
                         entries.add(ModBlocks.END_STONE_SAPPHIRE_ORE);
 
+                        entries.add(ModItems.SAPPHIRE_HELMET);
+                        entries.add(ModItems.SAPPHIRE_CHESTPLATE);
+                        entries.add(ModItems.SAPPHIRE_LEGGINGS);
+                        entries.add(ModItems.SAPPHIRE_BOOTS);
+
+                        entries.add(ModItems.SAPPHIRE_SWORD);
+                        entries.add(ModItems.SAPPHIRE_PICKAXE);
+                        entries.add(ModItems.SAPPHIRE_HOE);
+                        entries.add(ModItems.SAPPHIRE_SHOVEL);
+                        entries.add(ModItems.SAPPHIRE_AXE);
+                        entries.add(ModItems.SAPPHIRE_STAFF);
+                        entries.add(ModItems.WHELM);
+                        entries.add(ModItems.SCYTHE);
+                        entries.add(ModItems.BALMUNG);
+                        entries.add(ModItems.LUTE);
+                        entries.add(ModItems.THIEF_GLOVE);
+                        entries.add(ModItems.SAPPHIRE_MISERY);
+
 
                     }).build());
 
