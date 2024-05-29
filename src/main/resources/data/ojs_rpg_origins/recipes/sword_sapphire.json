@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shaped",
     "pattern": [
         " # ",
-        " # ",
+        " D ",
         " / "
     ],
     "key": {
@@ -11,6 +11,9 @@
         },
         "/": {
             "item": "minecraft:stick"
+        },
+        "D": {
+            "item": "ojs_rpg_origins:sapphire_rare"
         }
     },
     "result": {

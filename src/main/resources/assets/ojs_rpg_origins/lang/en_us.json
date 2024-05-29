@@ -1,10 +1,12 @@
 {
   "item.ojs_rpg_origins.sapphire": "Sapphire",
+  "item.ojs_rpg_origins.sapphire_rare": "Rare Sapphire",
   "item.ojs_rpg_origins.raw_sapphire": "Raw Sapphire",
   "item.ojs_rpg_origins.whelm": "Whelm Bow",
   "item.ojs_rpg_origins.sapphire_staff": "Sapphire Staff",
   "item.ojs_rpg_origins.sapphire_misery": "Sapphire Misery",
   "item.ojs_rpg_origins.scythe": "Life Hunt",
+  "item.ojs_rpg_origins.scythe_starter": "Scythe",
   "item.ojs_rpg_origins.scythe_upgrade": "Scythe of the Reaper",
   "item.ojs_rpg_origins.lute": "Bard's Lute",
   "item.ojs_rpg_origins.thief_glove": "Thieves Gloves",
@@ -39,7 +41,7 @@
   "tooltip.whelm": "§6Archer Bow",
   "tooltip.info_whelm": "§7A bow with powerful abilities.",
   "tooltip.multishot": "§7- §aMultishot:§7 Fires multiple arrows.",
-  "tooltip.powerful_whelm": "§7- §e:§7: Arrows have extra damage with this bow.",
+  "tooltip.powerful_whelm": "§7- §eArrow Boost:§7: Arrows have extra damage with this bow.",
 
   "tooltip.staff": "§6Staff",
   "tooltip.info_staff": "§7A magical staff with powerful abilities.",

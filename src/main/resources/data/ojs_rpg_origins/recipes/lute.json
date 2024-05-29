@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "D  ",
+        "/D ",
+        " /D"
+    ],
+    "key": {
+        "/": {
+            "item": "minecraft:note_block"
+        },
+        "D": {
+            "item": "ojs_rpg_origins:sapphire_rare"
+        }
+    },
+    "result": {
+        "item": "ojs_rpg_origins:lute",
+        "count": 1
+    }
+}
+

@@ -741,8 +741,10 @@
   ],
   "gui_light": "front",
   "display": {
-    "thirdperson_righthand": { "translation": [0, -3.75, 0.75] },
-    "thirdperson_lefthand": { "translation": [0, -3.75, 0.75] },
+    "thirdperson_righthand": { "translation": [0, -3.75, 0.75],
+      "scale": [1.51, 1.51, 1.51] },
+    "thirdperson_lefthand": { "translation": [0, -3.75, 0.75],
+      "scale": [1.51, 1.51, 1.51] },
     "firstperson_righthand": {
       "rotation": [-10, 0, 0],
       "translation": [-1.25, -4, 2.75]

@@ -1,0 +1,6 @@
+// 1.20.1	2024-05-22T18:59:58.7283014	Tags for minecraft:block mod id ojs_rpg_origins
+aead5cc82c29f96332b11ede07356e575b9c747c data/forge/tags/blocks/needs_netherite_tool.json
+90d5d1dd2641719f817ca2181b6c5ab4ea58ce37 data/minecraft/tags/blocks/mineable/pickaxe.json
+489583aead5655fad9c0cf5fe0461e189bd51724 data/minecraft/tags/blocks/needs_diamond_tool.json
+f69679cb860667d85094bca6da91ef32d8b72896 data/minecraft/tags/blocks/needs_iron_tool.json
+6df511aaaa6355ec1dccfbaed2128a7fbaf3b838 data/ojs_rpg_origins/tags/blocks/valuables.json

@@ -13,11 +13,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
         () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SAPPHIRE_RARE = ITEMS.register("sapphire_rare",
+            () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> SAPPHIRE_STAFF = ITEMS.register("sapphire_staff",
             () -> new SapphireStaff(new Item.Properties().stacksTo(1).durability(600).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> SCYTHE = ITEMS.register("scythe",
-            () -> new ScytheItem(Tiers.DIAMOND, 5, -2,new Item.Properties()));
-
+            () -> new ScytheItem(Tiers.DIAMOND, 4, -2,new Item.Properties()));
     public static final RegistryObject<Item> SCYTHE_UPGRADE = ITEMS.register("scythe_upgrade",
             () -> new ScytheItemUpgrade(Tiers.NETHERITE, 5, -2,new Item.Properties()));
     public static final RegistryObject<Item> THIEF_GLOVE = ITEMS.register("thief_glove",

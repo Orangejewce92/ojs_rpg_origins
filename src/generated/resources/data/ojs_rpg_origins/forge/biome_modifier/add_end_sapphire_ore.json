@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_end",
+  "features": "ojs_rpg_origins:end_sapphire_ore_placed",
+  "step": "underground_ores"
+}
