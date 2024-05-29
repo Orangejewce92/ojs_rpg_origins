@@ -29,6 +29,7 @@ public class ModCreativeModTabs {
                       pOutput.accept(ModItems.WHELM.get());
                       pOutput.accept(ModItems.SAPPHIRE_STAFF.get());
                       pOutput.accept(ModItems.SCYTHE.get());
+                      pOutput.accept(ModItems.SCYTHE_UPGRADE.get());
                       pOutput.accept(ModItems.LUTE.get());
                       pOutput.accept(ModItems.THIEF_GLOVE.get());
 

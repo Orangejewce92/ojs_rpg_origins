@@ -17,6 +17,9 @@ public class ModItems {
             () -> new SapphireStaff(new Item.Properties().stacksTo(1).durability(600).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> SCYTHE = ITEMS.register("scythe",
             () -> new ScytheItem(Tiers.DIAMOND, 5, -2,new Item.Properties()));
+
+    public static final RegistryObject<Item> SCYTHE_UPGRADE = ITEMS.register("scythe_upgrade",
+            () -> new ScytheItemUpgrade(Tiers.NETHERITE, 5, -2,new Item.Properties()));
     public static final RegistryObject<Item> THIEF_GLOVE = ITEMS.register("thief_glove",
             () -> new ThiefGloveItem());
 

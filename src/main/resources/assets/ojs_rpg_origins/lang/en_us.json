@@ -5,6 +5,7 @@
   "item.ojs_rpg_origins.sapphire_staff": "Sapphire Staff",
   "item.ojs_rpg_origins.sapphire_misery": "Sapphire Misery",
   "item.ojs_rpg_origins.scythe": "Life Hunt",
+  "item.ojs_rpg_origins.scythe_upgrade": "Scythe of the Reaper",
   "item.ojs_rpg_origins.lute": "Bard's Lute",
   "item.ojs_rpg_origins.thief_glove": "Thieves Gloves",
   "item.ojs_rpg_origins.balmung": "Balmung",
@@ -64,6 +65,12 @@
   "tooltip.balmung": "§6Balmung",
   "tooltip.info_balmung": "§7A legendary claymore that unleashes devastating area attacks.",
   "tooltip.special_attack": "§7 - §bSpecial Attack:§7 Sets target on fire and damages nearby enemies.",
+
+  "tooltip.scythe_1": "§6Scythe of the Reaper",
+  "tooltip.info_scythe_1": "§7A powerful weapon with sweeping and lifesteal abilities.",
+  "tooltip.sweep_ability_1": "§7- §aSweep:§7 Deals damage in a radius and applies slowness.",
+  "tooltip.lifesteal_ability_1": "§7- §bLifesteal:§7 Converts a portion of damage dealt to health.",
+  "tooltip.special_ability_1": "§7- §dSpecial:§7 Activates an AoE effect that debuffs enemies and buffs you.",
 
 
 

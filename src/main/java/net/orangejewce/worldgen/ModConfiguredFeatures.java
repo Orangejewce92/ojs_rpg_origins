@@ -33,11 +33,11 @@ public class ModConfiguredFeatures {
                         ModBlocks.SAPPHIRE_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState()));
 
-        register(context, OVERWORLD_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldSapphireOres, 9));
+        register(context, OVERWORLD_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldSapphireOres, 3));
         register(context, NETHER_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplacables,
-                ModBlocks.NETHER_SAPPHIRE_ORE.get().defaultBlockState(), 9));
+                ModBlocks.NETHER_SAPPHIRE_ORE.get().defaultBlockState(), 3));
         register(context, END_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceables,
-                ModBlocks.END_STONE_SAPPHIRE_ORE.get().defaultBlockState(), 9));
+                ModBlocks.END_STONE_SAPPHIRE_ORE.get().defaultBlockState(), 3));
     }
 
 
