@@ -1,13 +1,16 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "###",
+        "#D#",
         "# #",
         "# #"
     ],
     "key": {
         "#": {
             "item": "ojs_rpg_origins:sapphire"
+        },
+        "D": {
+            "item": "ojs_rpg_origins:sapphire_rare"
         }
     },
     "result": {

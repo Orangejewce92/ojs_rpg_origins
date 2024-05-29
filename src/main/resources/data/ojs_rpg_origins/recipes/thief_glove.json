@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "D/D",
+        " D "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:string"
+        },
+        "/": {
+            "item": "minecraft:leather"
+        },
+        "D": {
+            "item": "ojs_rpg_origins:sapphire_rare"
+        }
+    },
+    "result": {
+        "item": "ojs_rpg_origins:thief_glove",
+        "count": 1
+    }
+}

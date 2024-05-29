@@ -15,6 +15,7 @@ import net.orangejewce.ojs_rpg_origins.item.custom.*;
 
 public class ModItems {
     public static final Item SAPPHIRE = registerItem("sapphire", new Item(new FabricItemSettings()));
+    public static final Item SAPPHIRE_RARE = registerItem("sapphire_rare", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
 
     public static final Item SAPPHIRE_STAFF = registerItem("sapphire_staff",
             new SapphireStaff(Rarity.EPIC,new FabricItemSettings()));
@@ -25,6 +26,8 @@ public class ModItems {
             new SapphireMiseryItem());
     public static final Item SCYTHE = registerItem("scythe",
             new ScytheItem());
+    public static final Item SCYTHE_UPGRADE = registerItem("scythe_upgrade",
+            new ScytheItemUpgrade());
     public static final Item BALMUNG = registerItem("balmung",
             new Balmung());
     public static final Item LUTE = registerItem("lute",

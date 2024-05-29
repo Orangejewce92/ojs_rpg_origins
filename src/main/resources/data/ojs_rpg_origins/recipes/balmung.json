@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " D ",
+        "#D#",
+        " / "
+    ],
+    "key": {
+        "#": {
+            "item": "ojs_rpg_origins:sapphire"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "D": {
+            "item": "ojs_rpg_origins:sapphire_rare"
+        }
+    },
+    "result": {
+        "item": "ojs_rpg_origins:blamung",
+        "count": 1
+    }
+}
+

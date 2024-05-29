@@ -23,13 +23,13 @@ public class ModPlacedFeatures {
             var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
             register(context, SAPPHIRE_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.SAPPHIRE_ORE_KEY),
-                    ModOrePlacement.modifiersWithCount(12, // Veins per Chunk
+                    ModOrePlacement.modifiersWithCount(9, // Veins per Chunk
                             HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
             register(context, NETHER_SAPPHIRE_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.NETHER_SAPPHIRE_ORE_KEY),
-                    ModOrePlacement.modifiersWithCount(12, // Veins per Chunk
+                    ModOrePlacement.modifiersWithCount(9, // Veins per Chunk
                             HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
             register(context, END_SAPPHIRE_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.END_SAPPHIRE_ORE_KEY),
-                    ModOrePlacement.modifiersWithCount(12, // Veins per Chunk
+                    ModOrePlacement.modifiersWithCount(9, // Veins per Chunk
                             HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
         }
 

@@ -22,15 +22,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.NETHER_SAPPHIRE_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.END_STONE_SAPPHIRE_ORE);
-
-
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.SAPPHIRE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.SAPPHIRE_RARE, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_SAPPHIRE, Models.GENERATED);
-
 
         itemModelGenerator.register(ModItems.SAPPHIRE_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.SAPPHIRE_AXE, Models.HANDHELD);
@@ -38,10 +36,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SAPPHIRE_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.SAPPHIRE_HOE, Models.HANDHELD);
 
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.SAPPHIRE_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.SAPPHIRE_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.SAPPHIRE_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.SAPPHIRE_BOOTS));
-
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SAPPHIRE_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SAPPHIRE_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SAPPHIRE_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SAPPHIRE_BOOTS);
     }
 }

@@ -17,6 +17,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.sapphire"))
                     .icon(() -> new ItemStack(ModItems.SAPPHIRE)).entries((displayContext, entries) -> {
                         entries.add(ModItems.SAPPHIRE);
+                        entries.add(ModItems.SAPPHIRE_RARE);
                         entries.add(ModItems.RAW_SAPPHIRE);
 
                         entries.add(ModBlocks.SAPPHIRE_BLOCK);
@@ -39,6 +40,7 @@ public class ModItemGroups {
                         entries.add(ModItems.SAPPHIRE_STAFF);
                         entries.add(ModItems.WHELM);
                         entries.add(ModItems.SCYTHE);
+                        entries.add(ModItems.SCYTHE_UPGRADE);
                         entries.add(ModItems.BALMUNG);
                         entries.add(ModItems.LUTE);
                         entries.add(ModItems.THIEF_GLOVE);

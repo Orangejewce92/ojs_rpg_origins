@@ -39,9 +39,9 @@ public class ModConfiguredFeatures {
         List<OreFeatureConfig.Target> endSapphireOres =
                 List.of(OreFeatureConfig.createTarget(endReplacables, ModBlocks.END_STONE_SAPPHIRE_ORE.getDefaultState()));
 
-        register(context, SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSapphireOres, 12));
-        register(context, NETHER_SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 12));
-        register(context, END_SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(endSapphireOres, 12));
+        register(context, SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSapphireOres, 3));
+        register(context, NETHER_SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherSapphireOres, 3));
+        register(context, END_SAPPHIRE_ORE_KEY, Feature.ORE, new OreFeatureConfig(endSapphireOres, 3));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
