@@ -1,11 +1,20 @@
-package net.orangejewce.ojs_rpg_origins.item.util;
+package net.orangejewce.ojs_rpg_origins.Client;
 
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.util.Identifier;
-import net.minecraft.item.Item;
 import net.orangejewce.ojs_rpg_origins.item.ModItems;
+import net.minecraft.item.Item;
 
-public class ModItemProperties {
+@Environment(EnvType.CLIENT)
+public class ModItemPropertiesClient implements ClientModInitializer {
+    @Override
+    public void onInitializeClient() {
+        addCustomItemProperties();
+    }
+
     public static void addCustomItemProperties() {
         makeBow(ModItems.WHELM);
     }

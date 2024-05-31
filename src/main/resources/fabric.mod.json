@@ -19,7 +19,8 @@
 			"net.orangejewce.ojs_rpg_origins.OjsMod"
 		],
 		"client": [
-			"net.orangejewce.ojs_rpg_origins.OjsModClient"
+			"net.orangejewce.ojs_rpg_origins.OjsModClient",
+			"net.orangejewce.ojs_rpg_origins.Client.ModItemPropertiesClient"
 		],
 		"fabric-datagen": [
 			"net.orangejewce.ojs_rpg_origins.OjsModDataGenerator"
