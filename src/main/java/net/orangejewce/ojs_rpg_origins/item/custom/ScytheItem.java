@@ -1,5 +1,6 @@
 package net.orangejewce.ojs_rpg_origins.item.custom;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
@@ -12,6 +13,7 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.text.TextColor;
 import net.minecraft.util.ActionResult;
@@ -21,6 +23,7 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.orangejewce.ojs_rpg_origins.item.ModToolMaterial;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -33,10 +36,10 @@ public class ScytheItem extends SwordItem {
     private static final float LIFE_STEAL_PERCENTAGE = 0.2f; // 20% of damage dealt is returned as health
     private static final double KNOCKBACK_STRENGTH = 1.0; // Strength of the knockback effect
 
-    private static final float ATTACK_DAMAGE = 6.0f; // Base attack damage
+    private static final float ATTACK_DAMAGE = 4.5f; // Base attack damage
 
     public ScytheItem() {
-        super((ToolMaterial) ToolMaterials.DIAMOND, (int) ATTACK_DAMAGE, -2.4F, new Item.Settings().maxCount(1).rarity(Rarity.RARE));
+        super((ToolMaterial) ModToolMaterial.SAPPHIRE, (int) ATTACK_DAMAGE, -2.4F, new Item.Settings().maxCount(1).rarity(Rarity.RARE));
     }
 
     @Override
@@ -79,10 +82,17 @@ public class ScytheItem extends SwordItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("tooltip.scythe").styled(style -> style.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
-        tooltip.add(Text.translatable("tooltip.info_scythe").styled(style -> style.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
-        tooltip.add(Text.translatable("tooltip.sweep_ability").styled(style -> style.withColor(TextColor.fromRgb(0xFFD700))));
-        tooltip.add(Text.translatable("tooltip.lifesteal_ability").styled(style -> style.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
+        if (Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("tooltip.balmung.details")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withItalic(true)));
+        } else {
+            tooltip.add(Text.translatable("tooltip.scythe").styled(style -> style.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
+            tooltip.add(Text.translatable("tooltip.info_scythe").styled(style -> style.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            tooltip.add(Text.translatable("tooltip.sweep_ability").styled(style -> style.withColor(TextColor.fromRgb(0xFFD700))));
+            tooltip.add(Text.translatable("tooltip.lifesteal_ability").styled(style -> style.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
+            tooltip.add(Text.translatable("tooltip.shift_info")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+        }
     }
 
     @Override

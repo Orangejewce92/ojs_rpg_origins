@@ -1,5 +1,6 @@
 package net.orangejewce.ojs_rpg_origins.item.custom;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,9 +13,11 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
+import net.minecraft.text.TextColor;
 import net.minecraft.util.*;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.orangejewce.ojs_rpg_origins.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -26,8 +29,8 @@ public class SapphireStaff extends Item {
     private static final int PARTICLE_COUNT = 10; // Number of particles to spawn
     private static final float LIGHT_ATTACK_DAMAGE = 3.0f; // Light attack damage
 
-    public SapphireStaff(Rarity epic, Settings settings) {
-        super(settings);
+    public SapphireStaff(Rarity rarity, Settings settings) {
+        super(settings.rarity(rarity).maxDamage(500)); // Ensure the item has a max durability
     }
 
     @Override
@@ -88,11 +91,18 @@ public class SapphireStaff extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("tooltip.staff").setStyle(Style.EMPTY.withColor(Formatting.GREEN).withBold(true)));
-        tooltip.add(Text.translatable("tooltip.info_staff").setStyle(Style.EMPTY.withColor(Formatting.WHITE).withItalic(true)));
-        tooltip.add(Text.translatable("tooltip.ability").setStyle(Style.EMPTY.withColor(Formatting.GOLD)));
-        tooltip.add(Text.translatable("tooltip.special_ability").setStyle(Style.EMPTY.withColor(Formatting.RED).withItalic(true)));
-        super.appendTooltip(stack, world, tooltip, context);
+        if (Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("tooltip.balmung.details")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withItalic(true)));
+        } else {
+            tooltip.add(Text.translatable("tooltip.staff").setStyle(Style.EMPTY.withColor(Formatting.GREEN).withBold(true)));
+            tooltip.add(Text.translatable("tooltip.info_staff").setStyle(Style.EMPTY.withColor(Formatting.WHITE).withItalic(true)));
+            tooltip.add(Text.translatable("tooltip.ability").setStyle(Style.EMPTY.withColor(Formatting.GOLD)));
+            tooltip.add(Text.translatable("tooltip.special_ability").setStyle(Style.EMPTY.withColor(Formatting.RED).withItalic(true)));
+            tooltip.add(Text.translatable("tooltip.shift_info")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            super.appendTooltip(stack, world, tooltip, context);
+        }
     }
 
     @Override
@@ -111,13 +121,18 @@ public class SapphireStaff extends Item {
         }
     }
 
-//    @Override
-//    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-//        if (attacker instanceof PlayerEntity player) {
-//            target.damage(DamageSource.player(player), LIGHT_ATTACK_DAMAGE);
-//            stack.damage(1, player, (entity) -> entity.sendToolBreakStatus(player.getActiveHand()));
-//            return true;
-//        }
-//        return false;
-//    }
+    @Override
+    public boolean canRepair(ItemStack stack, ItemStack ingredient) {
+        return ingredient.getItem() == ModItems.SAPPHIRE_RARE || super.canRepair(stack, ingredient);
+    }
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if (attacker instanceof PlayerEntity player) {
+            target.damage(player.getDamageSources().playerAttack(player), LIGHT_ATTACK_DAMAGE);
+            stack.damage(1, player, (entity) -> entity.sendToolBreakStatus(player.getActiveHand()));
+            return true;
+        }
+        return false;
+    }
 }

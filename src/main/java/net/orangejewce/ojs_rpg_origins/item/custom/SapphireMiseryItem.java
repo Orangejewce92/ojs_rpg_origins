@@ -1,5 +1,6 @@
 package net.orangejewce.ojs_rpg_origins.item.custom;
 
+import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -24,6 +25,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import net.orangejewce.ojs_rpg_origins.item.ModToolMaterial;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.annotation.Target;
@@ -35,7 +37,7 @@ public class SapphireMiseryItem extends SwordItem {
     private static final int RESISTANCE_DURATION = 210; // Duration for resistance effect
 
     public SapphireMiseryItem() {
-        super(ToolMaterials.DIAMOND, 10, -3.0F, new Item.Settings().rarity(Rarity.EPIC));
+        super(ModToolMaterial.SAPPHIRE, 8, -3.0F, new Item.Settings().rarity(Rarity.EPIC));
     }
 
     @Override
@@ -64,11 +66,18 @@ public class SapphireMiseryItem extends SwordItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("tooltip.sapphire_misery").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
-        tooltip.add(Text.translatable("tooltip.info_sapphire_misery").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
-        tooltip.add(Text.translatable("tooltip.ability_1").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
-        tooltip.add(Text.translatable("tooltip.special_ability_2").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
-        super.appendTooltip(stack, world, tooltip, context);
+        if (Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("tooltip.balmung.details")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withItalic(true)));
+        } else {
+            tooltip.add(Text.translatable("tooltip.sapphire_misery").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
+            tooltip.add(Text.translatable("tooltip.info_sapphire_misery").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            tooltip.add(Text.translatable("tooltip.ability_1").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
+            tooltip.add(Text.translatable("tooltip.special_ability_2").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
+            tooltip.add(Text.translatable("tooltip.shift_info")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            super.appendTooltip(stack, world, tooltip, context);
+        }
     }
 
     public static void tickPlayer(PlayerEntity player) {
