@@ -1,5 +1,6 @@
 package net.orangejewce.ojs_rpg_origins.item;
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -93,14 +94,20 @@ public class SapphireStaff extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.translatable("tooltip.staff").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
-        tooltip.add(Component.translatable("tooltip.info_staff").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
-        tooltip.add(Component.translatable("tooltip.ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
-        tooltip.add(Component.translatable("tooltip.special_ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
-        super.appendHoverText(stack, level, tooltip, flag);
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+        if (Screen.hasShiftDown()) {
+            tooltipComponents.add(Component.translatable("tooltip.balmung.details")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withItalic(true)));
+        } else {
+            tooltipComponents.add(Component.translatable("tooltip.staff").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
+            tooltipComponents.add(Component.translatable("tooltip.info_staff").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            tooltipComponents.add(Component.translatable("tooltip.ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
+            tooltipComponents.add(Component.translatable("tooltip.special_ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
+            tooltipComponents.add(Component.translatable("tooltip.shift_info")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
+        }
     }
-
     @Override
     public void onUseTick(Level world, LivingEntity user, ItemStack stack, int count) {
         if (user instanceof Player player && world.isClientSide) {
@@ -124,5 +131,9 @@ public class SapphireStaff extends Item {
             return super.hurtEnemy(stack, target, attacker);
         }
         return false;
+    }
+    @Override
+    public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
+        return repair.getItem() == ModItems.SAPPHIRE_RARE.get() || super.isValidRepairItem(toRepair, repair);
     }
 }

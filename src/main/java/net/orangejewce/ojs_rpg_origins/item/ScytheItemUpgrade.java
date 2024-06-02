@@ -1,5 +1,6 @@
 package net.orangejewce.ojs_rpg_origins.item;
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -83,11 +84,19 @@ public class ScytheItemUpgrade extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-        tooltipComponents.add(Component.translatable("tooltip.scythe_1").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700)).withBold(true)));
-        tooltipComponents.add(Component.translatable("tooltip.info_scythe_1").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
-        tooltipComponents.add(Component.translatable("tooltip.sweep_ability_1").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00))));
-        tooltipComponents.add(Component.translatable("tooltip.lifesteal_ability_1").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
-        tooltipComponents.add(Component.translatable("tooltip.special_ability_1").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x8A2BE2)).withItalic(true)));
+        if (Screen.hasShiftDown()) {
+            tooltipComponents.add(Component.translatable("tooltip.balmung.details")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withItalic(true)));
+        } else {
+            tooltipComponents.add(Component.translatable("tooltip.scythe_1").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700)).withBold(true)));
+            tooltipComponents.add(Component.translatable("tooltip.info_scythe_1").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            tooltipComponents.add(Component.translatable("tooltip.sweep_ability_1").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00))));
+            tooltipComponents.add(Component.translatable("tooltip.lifesteal_ability_1").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
+            tooltipComponents.add(Component.translatable("tooltip.special_ability_1").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x8A2BE2)).withItalic(true)));
+            tooltipComponents.add(Component.translatable("tooltip.shift_info")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
+        }
     }
 
     @Override
@@ -108,5 +117,9 @@ public class ScytheItemUpgrade extends SwordItem {
             return true;
         }
         return false;
+    }
+    @Override
+    public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
+        return repair.getItem() == ModItems.SAPPHIRE_RARE.get() || super.isValidRepairItem(toRepair, repair);
     }
 }

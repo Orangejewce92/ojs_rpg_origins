@@ -67,12 +67,17 @@
   "tooltip.balmung": "§6Balmung",
   "tooltip.info_balmung": "§7A legendary claymore that unleashes devastating area attacks.",
   "tooltip.special_attack": "§7 - §bSpecial Attack:§7 Sets target on fire and damages nearby enemies.",
+  "tooltip.balmung.details": "Repairs with Rare Sapphire on Anvil",
 
   "tooltip.scythe_1": "§6Scythe of the Reaper",
   "tooltip.info_scythe_1": "§7A powerful weapon with sweeping and lifesteal abilities.",
   "tooltip.sweep_ability_1": "§7- §aSweep:§7 Deals damage in a radius and applies slowness.",
   "tooltip.lifesteal_ability_1": "§7- §bLifesteal:§7 Converts a portion of damage dealt to health.",
   "tooltip.special_ability_1": "§7- §dSpecial:§7 Activates an AoE effect that debuffs enemies and buffs you.",
+
+  "key.ojs_rpg_origins.tertiary_active": "Tertiary Active",
+  "key.ojs_rpg_origins.quaternary_active": "Quaternary Active",
+  "key.categories.ojs_rpg_origins": "OJS RPG Origins",
 
 
 

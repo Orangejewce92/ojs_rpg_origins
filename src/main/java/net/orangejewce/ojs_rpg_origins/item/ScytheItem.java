@@ -1,5 +1,6 @@
 package net.orangejewce.ojs_rpg_origins.item;
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -79,10 +80,17 @@ public class ScytheItem extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("tooltip.scythe").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
-        pTooltipComponents.add(Component.translatable("tooltip.info_scythe").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
-        pTooltipComponents.add(Component.translatable("tooltip.sweep_ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
-        pTooltipComponents.add(Component.translatable("tooltip.lifesteal_ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
+        if (Screen.hasShiftDown()) {
+            pTooltipComponents.add(Component.translatable("tooltip.balmung.details")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withItalic(true)));
+        } else {
+            pTooltipComponents.add(Component.translatable("tooltip.scythe").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
+            pTooltipComponents.add(Component.translatable("tooltip.info_scythe").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            pTooltipComponents.add(Component.translatable("tooltip.sweep_ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
+            pTooltipComponents.add(Component.translatable("tooltip.lifesteal_ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
+            pTooltipComponents.add(Component.translatable("tooltip.shift_info")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+        }
     }
 
     @Override
@@ -103,5 +111,9 @@ public class ScytheItem extends SwordItem {
             return true;
         }
         return false;
+    }
+    @Override
+    public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
+        return repair.getItem() == ModItems.SAPPHIRE_RARE.get() || super.isValidRepairItem(toRepair, repair);
     }
 }

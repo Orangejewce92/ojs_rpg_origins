@@ -1,6 +1,7 @@
 // SapphireMiseryItem.java
 package net.orangejewce.ojs_rpg_origins.item;
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
 import net.minecraft.world.entity.player.Player;
@@ -78,10 +79,21 @@ public class SapphireMiseryItem extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.translatable("tooltip.sapphire_misery").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
-        tooltip.add(Component.translatable("tooltip.info_sapphire_misery").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
-        tooltip.add(Component.translatable("tooltip.ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
-        tooltip.add(Component.translatable("tooltip.special_ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
-        super.appendHoverText(stack, level, tooltip, flag);
+        if (Screen.hasShiftDown()) {
+            tooltip.add(Component.translatable("tooltip.balmung.details")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withItalic(true)));
+        } else {
+            tooltip.add(Component.translatable("tooltip.sapphire_misery").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
+            tooltip.add(Component.translatable("tooltip.info_sapphire_misery").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            tooltip.add(Component.translatable("tooltip.ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
+            tooltip.add(Component.translatable("tooltip.special_ability").setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF4500)).withItalic(true)));
+            tooltip.add(Component.translatable("tooltip.shift_info")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            super.appendHoverText(stack, level, tooltip, flag);
+        }
+    }
+    @Override
+    public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
+        return repair.getItem() == ModItems.SAPPHIRE_RARE.get() || super.isValidRepairItem(toRepair, repair);
     }
 }

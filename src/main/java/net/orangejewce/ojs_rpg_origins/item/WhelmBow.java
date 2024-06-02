@@ -1,5 +1,6 @@
 package net.orangejewce.ojs_rpg_origins.item;
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -41,15 +42,22 @@ public class WhelmBow extends BowItem {
      */
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-        tooltipComponents.add(Component.translatable("tooltip.whelm")
-                .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
-        tooltipComponents.add(Component.translatable("tooltip.info_whelm")
-                .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
-        tooltipComponents.add(Component.translatable("tooltip.multishot")
-                .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
-        tooltipComponents.add(Component.translatable("tooltip.powerful_whelm")
-                .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF0000)).withBold(true)));
-        super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
+        if (Screen.hasShiftDown()) {
+            tooltipComponents.add(Component.translatable("tooltip.balmung.details")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withItalic(true)));
+        } else {
+            tooltipComponents.add(Component.translatable("tooltip.whelm")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withBold(true)));
+            tooltipComponents.add(Component.translatable("tooltip.info_whelm")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            tooltipComponents.add(Component.translatable("tooltip.multishot")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700))));
+            tooltipComponents.add(Component.translatable("tooltip.powerful_whelm")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFF0000)).withBold(true)));
+            tooltipComponents.add(Component.translatable("tooltip.shift_info")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
+        }
     }
 
 
@@ -129,5 +137,9 @@ public class WhelmBow extends BowItem {
                 }
             }
         }
+    }
+    @Override
+    public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
+        return repair.getItem() == ModItems.SAPPHIRE_RARE.get() || super.isValidRepairItem(toRepair, repair);
     }
 }

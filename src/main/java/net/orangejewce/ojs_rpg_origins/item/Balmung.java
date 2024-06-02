@@ -1,5 +1,6 @@
 package net.orangejewce.ojs_rpg_origins.item;
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -54,12 +55,23 @@ public class Balmung extends SwordItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
-        tooltipComponents.add(Component.translatable("tooltip.balmung")
-                .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700)).withBold(true)));
-        tooltipComponents.add(Component.translatable("tooltip.info_balmung")
-                .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
-        tooltipComponents.add(Component.translatable("tooltip.special_attack")
-                .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00))));
-        super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
+        if (Screen.hasShiftDown()) {
+            tooltipComponents.add(Component.translatable("tooltip.balmung.details")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00)).withItalic(true)));
+        } else {
+            tooltipComponents.add(Component.translatable("tooltip.balmung")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFD700)).withBold(true)));
+            tooltipComponents.add(Component.translatable("tooltip.info_balmung")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            tooltipComponents.add(Component.translatable("tooltip.special_attack")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x00FF00))));
+            tooltipComponents.add(Component.translatable("tooltip.shift_info")
+                    .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
+            super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
+        }
+    }
+    @Override
+    public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
+        return repair.getItem() == ModItems.SAPPHIRE_RARE.get() || super.isValidRepairItem(toRepair, repair);
     }
 }
