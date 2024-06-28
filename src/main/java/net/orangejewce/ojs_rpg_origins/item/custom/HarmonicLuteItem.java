@@ -21,6 +21,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class HarmonicLuteItem extends Item {
+    private static final int COOLDOWN_DURATION = 600; // Cooldown duration in ticks (30 seconds)
+
     public HarmonicLuteItem() {
         super(new Item.Settings().maxCount(1).maxDamage(250).rarity(Rarity.EPIC));
     }
@@ -29,8 +31,14 @@ public class HarmonicLuteItem extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack itemStack = player.getStackInHand(hand);
         if (!world.isClient) {
+            // Check if the player is on cooldown
+            if (player.getItemCooldownManager().isCoolingDown(this)) {
+                return TypedActionResult.fail(itemStack);
+            }
+
             playMusic(world, player);
             itemStack.damage(1, player, (p) -> p.sendToolBreakStatus(hand));
+            player.getItemCooldownManager().set(this, COOLDOWN_DURATION); // Set the cooldown
         } else {
             if (player.isSneaking()) {
                 player.playSound(SoundEvents.BLOCK_NOTE_BLOCK_BANJO.value(), 1.0F, 1.0F);
@@ -69,7 +77,7 @@ public class HarmonicLuteItem extends Item {
     private void applySongOfInvulnerability(PlayerEntity player) {
         List<LivingEntity> entities = player.getWorld().getEntitiesByClass(LivingEntity.class, new Box(player.getBlockPos()).expand(5), entity -> entity instanceof PlayerEntity);
         for (LivingEntity entity : entities) {
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 100, 4, true, true));
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 100, 2, true, true));
         }
     }
 

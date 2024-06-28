@@ -6,6 +6,6 @@
   "icon": "minecraft:player_head",
   "order": 0,
   "impact": 1,
-  "name": "Variant Human",
-  "description": "With their penchant for migration and conquest, humans are more physically diverse than other common races."
+  "name": "Tav Human",
+  "description": "A regular human with purpose."
 }

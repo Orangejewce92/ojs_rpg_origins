@@ -1,6 +1,6 @@
 {
-    "name": "Cleric",
-    "description": "Blessed by divine favor, the Cleric channels holy power to heal the wounded and smite the wicked. With unwavering faith and a sacred mission, they stand as a beacon of hope and a shield against the darkness.",
+    "name": "Acolyte",
+    "description": "Blessed by divine favor, the Acolyte channels holy power to heal the wounded and smite the wicked. With unwavering faith and a sacred mission, they stand as a beacon of hope and a shield against the darkness.",
     "powers": [
         "ojs_rpg_origins:villagefriendly",
         "ojs_rpg_origins:untrained",

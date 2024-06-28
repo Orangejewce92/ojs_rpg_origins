@@ -1,6 +1,6 @@
 {
-    "name": "Thief",
-    "description": "Skilled in the art of shadows, the Thief moves with unmatched stealth and cunning. With nimble fingers and quick reflexes, they excel at pilfering treasures and slipping away unseen, living by their wits in a world of intrigue and danger.",
+    "name": "Bandit",
+    "description": "Skilled in the art of shadows, the Bandit moves with unmatched stealth and cunning. With nimble fingers and quick reflexes, they excel at pilfering treasures and slipping away unseen, living by their wits in a world of intrigue and danger.",
     "powers": [
         "ojs_rpg_origins:speedy",
         "ojs_rpg_origins:stealthy",
