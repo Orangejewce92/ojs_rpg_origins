@@ -53,16 +53,16 @@ public class SapphireMiseryItem extends SwordItem {
         return TypedActionResult.success(itemStack);
     }
 
-//    @Override
-//    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-//        if (attacker instanceof PlayerEntity) {
-//            PlayerEntity player = (PlayerEntity) attacker;
-//            target.damage(DamageSource.player(player), target.getHealth() * 2);
-//            stack.damage(1, player, (p) -> p.sendToolBreakStatus(attacker.getActiveHand()));
-//            player.incrementStat(Stats.USED.getOrCreateStat(this));
-//        }
-//        return super.postHit(stack, target, attacker);
-//    }
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if (attacker instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) attacker;
+            target.damage(target.getDamageSources().playerAttack(player), target.getHealth() * 2);
+            stack.damage(1, player, (p) -> p.sendToolBreakStatus(attacker.getActiveHand()));
+            player.incrementStat(Stats.USED.getOrCreateStat(this));
+        }
+        return super.postHit(stack, target, attacker);
+    }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
@@ -89,8 +89,7 @@ public class SapphireMiseryItem extends SwordItem {
     }
 
     public static void onLivingHurt(LivingEntity entity, DamageSource source, float amount) {
-        if (entity instanceof PlayerEntity) {
-            PlayerEntity player = (PlayerEntity) entity;
+        if (entity instanceof PlayerEntity player) {
             if (player.getMainHandStack().getItem() instanceof SapphireMiseryItem) {
                 entity.damage(source, amount * 0.9F);
             }

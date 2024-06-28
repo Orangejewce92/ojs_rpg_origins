@@ -1,6 +1,6 @@
 {
     "name": "Uneasy Alliance",
-    "description": "You and the pillagers have known eachother, but not well enough for them to let you live. Whenever you kill an iron golem in a village, it'll start a raid.",
+    "description": "You and the pillagers have known each other, but not well enough for them to let you live. Whenever you kill an iron Golem in a village, it'll start a raid.",
     "type": "origins:self_action_on_kill",
     "target_condition": {
         "type": "origins:entity_type",

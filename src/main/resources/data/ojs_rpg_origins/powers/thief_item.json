@@ -1,6 +1,6 @@
 {
     "name": "Thieves Gloves (bag)",
-    "description": "Shift right click with this item to steal from villagers",
+    "description": "Smack a villager to steal his items. Of course he will not be happy...",
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
         "type": "origins:and",
