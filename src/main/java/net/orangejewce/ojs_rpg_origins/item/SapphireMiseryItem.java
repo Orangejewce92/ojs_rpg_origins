@@ -31,7 +31,7 @@ public class SapphireMiseryItem extends SwordItem {
     private static final int COOLDOWN = 200; // 10 seconds cooldown
 
     public SapphireMiseryItem() {
-        super(Tiers.DIAMOND, 10, -3.0F, new Item.Properties());
+        super(Tiers.DIAMOND, 5, -3.0F, new Item.Properties());
         MinecraftForge.EVENT_BUS.register(this);
     }
 

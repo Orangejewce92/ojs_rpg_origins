@@ -33,7 +33,7 @@
   "tooltip.harmonic_lute": "§6Harmonic Lute",
   "tooltip.info_harmonic_lute": "§7Plays music that grants passive and defensive powers.",
   "tooltip.passive_harmonic_lute": "§7- §aPassive:§7 Regeneration and resistance",
-  "tooltip.active_harmonic_lute": "§7- §bActive:§7 Shielding Song and Song of Invulnerability",
+  "tooltip.active_harmonic_lute": "§7- §bActive:§7 Shielding Song and Song of Invulnerability ( Crouch click )",
 
 
   "creativetab.rpg_tab": "Oj's RPG Origins",

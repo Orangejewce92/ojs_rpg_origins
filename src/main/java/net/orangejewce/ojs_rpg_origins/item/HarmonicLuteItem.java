@@ -19,22 +19,28 @@ import net.minecraft.world.phys.AABB;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = "ojs_rpg_origins")
 public class HarmonicLuteItem extends Item {
+    private static final int COOLDOWN_TICKS = 600; // Set your cooldown duration here
+
     public HarmonicLuteItem(Properties rarity) {
         super(new Item.Properties().stacksTo(1).durability(250));
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, @NotNull InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
         if (!level.isClientSide) {
-            playMusic(level, player);
-            itemstack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(hand));
+            if (!player.getCooldowns().isOnCooldown(this)) {
+                playMusic(level, player);
+                itemstack.hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(hand));
+                player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
+            }
         } else {
             if (player.isCrouching()) {
                 player.playSound(SoundEvents.NOTE_BLOCK_BANJO.get(), 1.0F, 1.0F);
@@ -78,7 +84,7 @@ public class HarmonicLuteItem extends Item {
         List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, new AABB(player.blockPosition()).inflate(5));
         for (LivingEntity entity : entities) {
             if (entity instanceof Player) {
-                entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 4, true, true));
+                entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 3, true, true));
             }
         }
     }
@@ -94,8 +100,7 @@ public class HarmonicLuteItem extends Item {
 
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
-        if (entity instanceof Player && selected) {
-            Player player = (Player) entity;
+        if (entity instanceof Player player && selected) {
             List<LivingEntity> entities = level.getEntitiesOfClass(LivingEntity.class, new AABB(player.blockPosition()).inflate(10));
             for (LivingEntity e : entities) {
                 if (e instanceof Player) {

@@ -20,7 +20,7 @@ import java.util.List;
 
 public class Balmung extends SwordItem {
     public Balmung() {
-        super(Tiers.NETHERITE, 12, -2.4F, new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
+        super(Tiers.NETHERITE, 5, -2.4F, new Item.Properties().stacksTo(1).rarity(Rarity.EPIC));
     }
 
     @Override
