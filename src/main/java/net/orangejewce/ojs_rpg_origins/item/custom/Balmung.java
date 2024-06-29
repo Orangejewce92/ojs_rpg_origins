@@ -28,7 +28,7 @@ import java.util.List;
 
 public class Balmung extends SwordItem {
     public Balmung() {
-        super(ModToolMaterial.SAPPHIRE, 10, -2.4F, new Item.Settings().maxCount(1).rarity(Rarity.EPIC));
+        super(ModToolMaterial.SAPPHIRE, 6, -2.4F, new Item.Settings().maxCount(1).rarity(Rarity.EPIC));
     }
 
     @Override

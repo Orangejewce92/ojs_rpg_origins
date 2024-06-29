@@ -33,11 +33,11 @@ import java.util.List;
 
 public class SapphireMiseryItem extends SwordItem {
 
-    private static final int COOLDOWN = 200; // 10 seconds cooldown
-    private static final int RESISTANCE_DURATION = 210; // Duration for resistance effect
+    private static final int COOLDOWN = 600; // 10 seconds cooldown
+    private static final int RESISTANCE_DURATION = 600; // Duration for resistance effect
 
     public SapphireMiseryItem() {
-        super(ModToolMaterial.SAPPHIRE, 8, -3.0F, new Item.Settings().rarity(Rarity.EPIC));
+        super(ModToolMaterial.SAPPHIRE, 5, -3.0F, new Item.Settings().rarity(Rarity.EPIC));
     }
 
     @Override
@@ -55,8 +55,7 @@ public class SapphireMiseryItem extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (attacker instanceof PlayerEntity) {
-            PlayerEntity player = (PlayerEntity) attacker;
+        if (attacker instanceof PlayerEntity player) {
             target.damage(target.getDamageSources().playerAttack(player), target.getHealth() * 2);
             stack.damage(1, player, (p) -> p.sendToolBreakStatus(attacker.getActiveHand()));
             player.incrementStat(Stats.USED.getOrCreateStat(this));
