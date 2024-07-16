@@ -10,7 +10,7 @@ import net.orangejewce.ojs_rpg_origins.OjsMod;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    SAPPHIRE("sapphire", 25, new int[] { 3, 8, 6, 3 }, 19,
+    SAPPHIRE("sapphire", 25, new int[] { 5, 8, 6, 3 }, 19,
             SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 2f, 0.1f, () -> Ingredient.ofItems(ModItems.SAPPHIRE_RARE));
 
     private final String name;
@@ -22,7 +22,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Supplier<Ingredient> repairIngredient;
 
-    private static final int[] BASE_DURABILITY = { 11, 16, 15, 13 };
+    private static final int[] BASE_DURABILITY = { 11, 16, 16, 13 };
 
     ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound,
                       float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {

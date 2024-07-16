@@ -36,15 +36,15 @@ public class ModItems {
             new ThiefGloveItem(new FabricItemSettings().maxCount(1).maxDamage(50).rarity(Rarity.EPIC)));
     public static final Item RAW_SAPPHIRE = registerItem("raw_sapphire", new Item(new FabricItemSettings()));
     public static final Item SAPPHIRE_PICKAXE = registerItem("sapphire_pickaxe",
-            new PickaxeItem(ModToolMaterial.SAPPHIRE, 2, -1f, new FabricItemSettings()));
+            new PickaxeItem(ModToolMaterial.SAPPHIRE, -1, -2f, new FabricItemSettings()));
     public static final Item SAPPHIRE_AXE = registerItem("sapphire_axe",
-            new AxeItem(ModToolMaterial.SAPPHIRE, 3, 0f, new FabricItemSettings()));
+            new AxeItem(ModToolMaterial.SAPPHIRE, 2, -1f, new FabricItemSettings()));
     public static final Item SAPPHIRE_SHOVEL = registerItem("sapphire_shovel",
-            new ShovelItem(ModToolMaterial.SAPPHIRE, 0, 0f, new FabricItemSettings()));
+            new ShovelItem(ModToolMaterial.SAPPHIRE, -1, -2.5f, new FabricItemSettings()));
     public static final Item SAPPHIRE_SWORD = registerItem("sapphire_sword",
-            new SwordItem(ModToolMaterial.SAPPHIRE, 5, -2f, new FabricItemSettings()));
+            new SwordItem(ModToolMaterial.SAPPHIRE, 4, -1.5f, new FabricItemSettings()));
     public static final Item SAPPHIRE_HOE = registerItem("sapphire_hoe",
-            new HoeItem(ModToolMaterial.SAPPHIRE, 0, 0f, new FabricItemSettings()));
+            new HoeItem(ModToolMaterial.SAPPHIRE, 0, -2f, new FabricItemSettings()));
 
 
     public static final Item SAPPHIRE_HELMET = registerItem("sapphire_helmet",
