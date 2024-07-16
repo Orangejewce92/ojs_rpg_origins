@@ -10,8 +10,8 @@ import net.orangejewce.ojs_rpg_origins.OJs_OriginMod;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    SAPPHIRE("sapphire", 26, new int[]{5, 7, 5, 4}, 25,
-            SoundEvents.ARMOR_EQUIP_GOLD, 1f, 0f, () -> Ingredient.of(ModItems.SAPPHIRE_RARE.get()))
+    SAPPHIRE("sapphire", 26, new int[]{5, 8, 6, 4}, 19,
+            SoundEvents.ARMOR_EQUIP_GOLD, 2f, 0.1f, () -> Ingredient.of(ModItems.SAPPHIRE_RARE.get()))
     ;
 
     private final String name;
