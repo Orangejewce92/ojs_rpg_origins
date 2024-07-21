@@ -1,6 +1,4 @@
 {
-    "name": "Select Targets",
-    "description": "You are stronger against mobs with a great amount of health, but are weaker against mobs with lower health.",
     "type": "origins:modify_damage_dealt",
     "target_condition": {
         "type": "origins:attribute",

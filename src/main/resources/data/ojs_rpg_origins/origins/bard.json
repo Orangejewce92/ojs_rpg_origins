@@ -1,7 +1,4 @@
 {
-    "name": "Bard",
-    "description":
-    "With melodies that can heal wounds and songs that inspire bravery, the Bard weaves magic through music.",
     "powers": [
         "ojs_rpg_origins:decoy",
         "origins:more_exhaustion",

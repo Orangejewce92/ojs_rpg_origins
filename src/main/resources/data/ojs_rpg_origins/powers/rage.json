@@ -1,6 +1,4 @@
 {
-    "name": "Rage",
-    "description": "In battle, you fight with primal ferocity, granting yourself 60 seconds of strength and resistance.",
     "type": "origins:active_self",
     "entity_action": {
         "type": "origins:and",

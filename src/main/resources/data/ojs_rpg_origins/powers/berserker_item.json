@@ -1,6 +1,5 @@
 {
-    "name": "Balmung",
-    "description": "Beserker loves to swing his mighty claymore",
+
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
         "type": "origins:and",

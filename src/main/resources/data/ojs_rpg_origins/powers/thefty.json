@@ -1,6 +1,4 @@
 {
-    "name": "Thefty",
-    "description": "Whenever you kill a villager (Why would you) you can steal some emeralds.",
     "type": "origins:self_action_on_kill",
     "target_condition": {
         "type": "origins:entity_type",

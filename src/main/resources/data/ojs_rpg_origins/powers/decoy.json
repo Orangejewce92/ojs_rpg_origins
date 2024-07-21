@@ -1,6 +1,4 @@
 {
-    "name": "Decoy",
-    "description": "Many people have used you as their decoy, so you've adapted to run faster whenever you're weak.",
     "condition": {
         "type": "origins:health",
         "comparison": "<=",

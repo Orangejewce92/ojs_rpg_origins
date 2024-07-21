@@ -1,6 +1,4 @@
 {
-    "name": "Unarmored Defense",
-    "description": "You have extra speed and defense when not wearing armor.",
     "type": "origins:conditioned_attribute",
     "modifiers": [
         {

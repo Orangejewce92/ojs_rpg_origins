@@ -1,6 +1,4 @@
 {
-    "name": "Resourceful",
-    "description": "Whenever you are near a fletching table, you can craft more arrows.",
     "condition": {
         "type": "origins:block_in_radius",
         "block_condition": {

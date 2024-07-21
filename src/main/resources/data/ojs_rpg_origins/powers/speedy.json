@@ -1,6 +1,4 @@
 {
-    "name": "Speedy",
-    "description": "You're faster than normal.",
     "type": "origins:stacking_status_effect",
     "min_stacks": 1,
     "max_stacks": 1,

@@ -1,6 +1,4 @@
 {
-    "name": "Brute",
-    "description": "Forged in the crucible of battle, the Brute is a force of sheer strength and unyielding will. With each swing of their weapon, they shatter defenses and break the resolve of their enemies, embodying raw power and relentless fury.",
     "powers": [
         "ojs_rpg_origins:no_time_to_rest",
         "origins:no_shield",

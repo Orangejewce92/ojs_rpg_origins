@@ -1,6 +1,5 @@
 {
-    "name": "Harmonic lute",
-    "description": "The Bard's Trusty tool for all battles with your allies...",
+
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
         "type": "origins:and",

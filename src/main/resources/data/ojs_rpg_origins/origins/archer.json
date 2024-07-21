@@ -1,7 +1,5 @@
 {
-    "name": "Archer",
-    "description": "Born with an unerring eye and a steady hand, the Archer strikes with precision from afar, their arrows a whisper of death before the storm. Guided by instinct and honed by training, they are the unseen force that turns the tide of battle.",
-    "powers": [
+   "powers": [
         "ojs_rpg_origins:marksman",
         "ojs_rpg_origins:untrained",
         "ojs_rpg_origins:inexperienced",

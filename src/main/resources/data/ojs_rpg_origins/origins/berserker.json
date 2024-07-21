@@ -1,6 +1,4 @@
 {
-    "name": "Berserker",
-    "description": "Let him rage, no time for talk.",
     "powers": [
         "ojs_rpg_origins:hp",
         "ojs_rpg_origins:rage",
