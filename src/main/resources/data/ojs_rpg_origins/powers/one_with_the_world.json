@@ -1,6 +1,4 @@
 {
-    "name": "One With the World",
-    "description": "Whatever is going on in the world will affect you. Whenever you're exposed to the sun you'll slowly revert the effects of insomnia.",
     "condition": {
         "type": "origins:exposed_to_sun"
     },

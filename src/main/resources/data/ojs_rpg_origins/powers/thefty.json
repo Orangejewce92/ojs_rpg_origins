@@ -1,6 +1,4 @@
 {
-    "name": "For The Thrills..",
-    "description": "Killing Villagers grants Emeralds.",
     "type": "origins:self_action_on_kill",
     "target_condition": {
         "type": "origins:entity_type",

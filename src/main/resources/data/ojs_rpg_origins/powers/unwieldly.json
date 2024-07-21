@@ -1,6 +1,4 @@
 {
-    "name": "Unwieldly",
-    "description": "Strong with magic, not your fists..",
     "type": "origins:modify_damage_dealt",
     "modifier": {
         "operation": "multiply_base",

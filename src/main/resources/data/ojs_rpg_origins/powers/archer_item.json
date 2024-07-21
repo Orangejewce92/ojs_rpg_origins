@@ -1,6 +1,5 @@
 {
-    "name": "Whelm Bow",
-    "description": "Given to you by your father, you never leave it behind..",
+
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
         "type": "origins:and",

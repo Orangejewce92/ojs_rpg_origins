@@ -1,6 +1,4 @@
 {
-    "name": "Steathy Damage",
-    "description": "The damage effect of stealthy",
     "hidden": true,
     "condition": {
         "type": "origins:sneaking"

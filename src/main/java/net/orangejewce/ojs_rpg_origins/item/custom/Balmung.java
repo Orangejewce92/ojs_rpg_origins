@@ -19,11 +19,9 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.orangejewce.ojs_rpg_origins.item.ModItems;
 import net.orangejewce.ojs_rpg_origins.item.ModToolMaterial;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.*;
 import java.util.List;
 
 public class Balmung extends SwordItem {
@@ -48,13 +46,17 @@ public class Balmung extends SwordItem {
         return super.postHit(stack, target, attacker);
     }
 
-    public TypedActionResult<ItemStack> useOnEntity(World world, PlayerEntity player, LivingEntity target, Hand hand) {
+    @Override
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
-        if (target instanceof LivingEntity) {
-            target.setOnFireFor(5);
+        if (!world.isClient) {
+            List<LivingEntity> entities = world.getEntitiesByClass(LivingEntity.class, player.getBoundingBox().expand(3), entity -> entity != player);
+            for (LivingEntity entity : entities) {
+                entity.setOnFireFor(5);
+            }
             player.getItemCooldownManager().set(this, 100);
-            world.playSound(null, target.getBlockPos(), SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.PLAYERS, 1.0F, 1.0F);
-            return TypedActionResult.success(stack, world.isClient());
+            world.playSound(null, player.getBlockPos(), SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+            return TypedActionResult.success(stack);
         }
         return TypedActionResult.pass(stack);
     }
@@ -71,9 +73,9 @@ public class Balmung extends SwordItem {
                     .styled(style -> style.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
             tooltip.add(Text.translatable("tooltip.special_attack")
                     .styled(style -> style.withColor(TextColor.fromRgb(0x00FF00))));
-            super.appendTooltip(stack, world, tooltip, context);
             tooltip.add(Text.translatable("tooltip.shift_info")
                     .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF)).withItalic(true)));
         }
+        super.appendTooltip(stack, world, tooltip, context);
     }
 }

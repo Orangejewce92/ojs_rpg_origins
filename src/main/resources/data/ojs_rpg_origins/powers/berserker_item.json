@@ -1,6 +1,4 @@
 {
-    "name": "Balmung",
-    "description": "The Strongest Claymore, powerful enough to knock back several enemies!",
     "type": "origins:action_on_callback",
     "entity_action_chosen": {
         "type": "origins:and",

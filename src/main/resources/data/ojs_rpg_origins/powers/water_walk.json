@@ -1,6 +1,4 @@
 {
-    "name": "Water Walk",
-    "description": "You've learned to harness the power of the heart of the sea, so while you hold it, you can walk on water.",
     "condition": {
         "type": "origins:equipped_item",
         "equipment_slot": "mainhand",

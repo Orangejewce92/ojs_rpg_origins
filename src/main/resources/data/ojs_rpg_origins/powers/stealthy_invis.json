@@ -1,6 +1,4 @@
 {
-    "name": "Stealthy Invis",
-    "description": "The invisible effect for steathy",
     "hidden": true,
     "condition": {
         "type": "origins:sneaking"
